@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB6E2BA4655C006CC784 /* RegisterVC.swift */; };
+		8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB722BA465AE006CC784 /* RegisterScreen.swift */; };
 		8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4BC2B93471A00913807 /* AppDelegate.swift */; };
 		8558D4BF2B93471A00913807 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4BE2B93471A00913807 /* SceneDelegate.swift */; };
 		8558D4C12B93471A00913807 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4C02B93471A00913807 /* HomeVC.swift */; };
 		8558D4C62B93471C00913807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8558D4C52B93471C00913807 /* Assets.xcassets */; };
 		8558D4C92B93471C00913807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8558D4C72B93471C00913807 /* LaunchScreen.storyboard */; };
 		8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4D02B93496C00913807 /* HomeScreen.swift */; };
+		856D5CA62BA7453300AF68F6 /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D5CA52BA7453300AF68F6 /* PasswordVC.swift */; };
+		856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */; };
+		858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E22BB05D3700698EA7 /* SelectVC.swift */; };
+		858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E42BB05D8100698EA7 /* SelectScreen.swift */; };
+		858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */; };
+		858FD1EA2BB0A4D300698EA7 /* Reserve1Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */; };
+		858FD1ED2BB2223000698EA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */; };
+		858FD1F02BB223FD00698EA7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1EF2BB223FD00698EA7 /* FirebaseAnalytics */; };
+		858FD1F22BB223FD00698EA7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F12BB223FD00698EA7 /* FirebaseAuth */; };
+		858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F32BB223FD00698EA7 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8557AB6E2BA4655C006CC784 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		8557AB722BA465AE006CC784 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		8558D4B92B93471A00913807 /* bohemiaLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bohemiaLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8558D4BC2B93471A00913807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8558D4BE2B93471A00913807 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,13 @@
 		8558D4C82B93471C00913807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8558D4CA2B93471C00913807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8558D4D02B93496C00913807 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		856D5CA52BA7453300AF68F6 /* PasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
+		856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
+		858FD1E22BB05D3700698EA7 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
+		858FD1E42BB05D8100698EA7 /* SelectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreen.swift; sourceTree = "<group>"; };
+		858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1VC.swift; sourceTree = "<group>"; };
+		858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1Screen.swift; sourceTree = "<group>"; };
+		858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +52,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858FD1F02BB223FD00698EA7 /* FirebaseAnalytics in Frameworks */,
+				858FD1F22BB223FD00698EA7 /* FirebaseAuth in Frameworks */,
+				858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8557AB6C2BA4651B006CC784 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8558D4C02B93471A00913807 /* HomeVC.swift */,
+				8558D4D02B93496C00913807 /* HomeScreen.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8557AB6D2BA4653C006CC784 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8557AB6E2BA4655C006CC784 /* RegisterVC.swift */,
+				8557AB722BA465AE006CC784 /* RegisterScreen.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		8558D4B02B93471A00913807 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +98,54 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				858FD1EB2BB2220F00698EA7 /* Firebase */,
+				858FD1E62BB0A46800698EA7 /* Reserve1 */,
+				858FD1E12BB05CF100698EA7 /* SelectHouse */,
+				856D5CA42BA7450300AF68F6 /* Password */,
+				8557AB6D2BA4653C006CC784 /* Register */,
+				8557AB6C2BA4651B006CC784 /* Home */,
 				8558D4BC2B93471A00913807 /* AppDelegate.swift */,
 				8558D4BE2B93471A00913807 /* SceneDelegate.swift */,
-				8558D4D02B93496C00913807 /* HomeScreen.swift */,
-				8558D4C02B93471A00913807 /* HomeVC.swift */,
 				8558D4C52B93471C00913807 /* Assets.xcassets */,
 				8558D4C72B93471C00913807 /* LaunchScreen.storyboard */,
 				8558D4CA2B93471C00913807 /* Info.plist */,
 			);
 			path = bohemiaLX;
+			sourceTree = "<group>";
+		};
+		856D5CA42BA7450300AF68F6 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				856D5CA52BA7453300AF68F6 /* PasswordVC.swift */,
+				856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		858FD1E12BB05CF100698EA7 /* SelectHouse */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E22BB05D3700698EA7 /* SelectVC.swift */,
+				858FD1E42BB05D8100698EA7 /* SelectScreen.swift */,
+			);
+			path = SelectHouse;
+			sourceTree = "<group>";
+		};
+		858FD1E62BB0A46800698EA7 /* Reserve1 */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */,
+				858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */,
+			);
+			path = Reserve1;
+			sourceTree = "<group>";
+		};
+		858FD1EB2BB2220F00698EA7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +164,11 @@
 			dependencies = (
 			);
 			name = bohemiaLX;
+			packageProductDependencies = (
+				858FD1EF2BB223FD00698EA7 /* FirebaseAnalytics */,
+				858FD1F12BB223FD00698EA7 /* FirebaseAuth */,
+				858FD1F32BB223FD00698EA7 /* FirebaseFirestore */,
+			);
 			productName = bohemiaLX;
 			productReference = 8558D4B92B93471A00913807 /* bohemiaLX.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +197,9 @@
 				Base,
 			);
 			mainGroup = 8558D4B02B93471A00913807;
+			packageReferences = (
+				858FD1EE2BB223FC00698EA7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8558D4BA2B93471A00913807 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +216,7 @@
 			files = (
 				8558D4C92B93471C00913807 /* LaunchScreen.storyboard in Resources */,
 				8558D4C62B93471C00913807 /* Assets.xcassets in Resources */,
+				858FD1ED2BB2223000698EA7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +227,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
+				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
+				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
+				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
+				858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */,
 				8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */,
+				858FD1EA2BB0A4D300698EA7 /* Reserve1Screen.swift in Sources */,
+				856D5CA62BA7453300AF68F6 /* PasswordVC.swift in Sources */,
+				8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */,
 				8558D4BF2B93471A00913807 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +389,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = backfront.bohemiaLX;
+				PRODUCT_BUNDLE_IDENTIFIER = pedroRibeiro.BohemiaLx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -318,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = backfront.bohemiaLX;
+				PRODUCT_BUNDLE_IDENTIFIER = pedroRibeiro.BohemiaLx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -348,6 +446,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		858FD1EE2BB223FC00698EA7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		858FD1EF2BB223FD00698EA7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 858FD1EE2BB223FC00698EA7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		858FD1F12BB223FD00698EA7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 858FD1EE2BB223FC00698EA7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		858FD1F32BB223FD00698EA7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 858FD1EE2BB223FC00698EA7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8558D4B12B93471A00913807 /* Project object */;
 }

@@ -7,7 +7,19 @@
 
 import UIKit
 
+protocol HomeScreenProtocol: AnyObject {
+    func customNavigation()
+    func customNavigation2()
+    func customNavigation3()
+    }
+
 class HomeScreen: UIView {
+    
+    private weak var delegate: HomeScreenProtocol?
+    
+    public func delegate(delegate: HomeScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -71,6 +83,7 @@ class HomeScreen: UIView {
     
     @objc func tappedNextButton(_ sender: UIButton) {
         print("ok")
+        delegate?.customNavigation3()
     }
     
     lazy var line1: UILabel = {
@@ -104,8 +117,10 @@ class HomeScreen: UIView {
     }()
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
-        print("okay")
-    }
+        delegate?.customNavigation()
+            print("okay")
+        }
+    
     
     lazy var forgotPassword: UIButton = {
         let button: UIButton = UIButton()
@@ -120,6 +135,7 @@ class HomeScreen: UIView {
     }()
     
     @objc func tappedForgotPassword(_ sender: UIButton) {
+        delegate?.customNavigation2()
         print("Ok!!!")
     }
     
@@ -152,17 +168,17 @@ class HomeScreen: UIView {
             subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 120),
+            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         
-            emailTextField.topAnchor.constraint(equalTo: topAnchor, constant: 340),
+            emailTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 60),
             emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
             passwordTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             passwordTextField.widthAnchor.constraint(equalToConstant: 300),
-            
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 200),
-            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             nextButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
