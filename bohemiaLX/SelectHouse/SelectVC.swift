@@ -15,6 +15,7 @@ class SelectVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
         selectScreen?.delegate(delegate: self)
+        
     }
     
     override func loadView() {
@@ -26,8 +27,9 @@ class SelectVC: UIViewController {
 
 extension SelectVC: SelectScreenProtocol {
     func customNavigation() {
-        let vc: Reserve1VC = Reserve1VC()
-        navigationController?.pushViewController(vc, animated: true)
+        let vc2: Reserve1VC = Reserve1VC()
+        navigationController?.pushViewController(vc2, animated: true)
+        
     }
     
     

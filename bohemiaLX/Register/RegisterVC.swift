@@ -10,9 +10,11 @@ import UIKit
 class RegisterVC: UIViewController {
     
     var registerScreen: RegisterScreen?
+    private var viewModel: HomeViewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerScreen?.delegate(delegate: self)
 
     }
     
@@ -23,4 +25,10 @@ class RegisterVC: UIViewController {
 
 }
 
+extension RegisterVC: RegisterScreenProtocol {
+    func customBody() {
+        print("ta ok")
+        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "")
+    }
+}
 

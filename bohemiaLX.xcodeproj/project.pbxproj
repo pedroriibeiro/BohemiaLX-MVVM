@@ -25,6 +25,7 @@
 		858FD1F02BB223FD00698EA7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1EF2BB223FD00698EA7 /* FirebaseAnalytics */; };
 		858FD1F22BB223FD00698EA7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F12BB223FD00698EA7 /* FirebaseAuth */; };
 		858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F32BB223FD00698EA7 /* FirebaseFirestore */; };
+		85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1VC.swift; sourceTree = "<group>"; };
 		858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1Screen.swift; sourceTree = "<group>"; };
 		858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		8557AB6C2BA4651B006CC784 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				85EEDF2E2BB48B93009ABE7C /* viewModel */,
 				8558D4C02B93471A00913807 /* HomeVC.swift */,
 				8558D4D02B93496C00913807 /* HomeScreen.swift */,
 			);
@@ -146,6 +149,14 @@
 				858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		85EEDF2E2BB48B93009ABE7C /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
 				858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */,
 				8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */,
+				85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */,
 				858FD1EA2BB0A4D300698EA7 /* Reserve1Screen.swift in Sources */,
 				856D5CA62BA7453300AF68F6 /* PasswordVC.swift in Sources */,
 				8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */,

@@ -9,7 +9,8 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    var homeScreen: HomeScreen?
+    private var homeScreen: HomeScreen?
+    private var viewModel: HomeViewModel = HomeViewModel()
     
     override func loadView() {
         homeScreen = HomeScreen()
@@ -24,20 +25,21 @@ class HomeVC: UIViewController {
         
     }
 extension HomeVC: HomeScreenProtocol {
-    func customNavigation3() {
+    func customNavNext() {
         let vc3: SelectVC = SelectVC()
         vc3.modalPresentationStyle = .currentContext
         // MARK: Altera o fluxo de navegação para a select ser a principal
+
         let nav = UINavigationController(rootViewController: vc3)
         present(nav, animated: true)
     }
     
-    func customNavigation2() {
+    func customNavForgotPass() {
         let vc2: PasswordVC = PasswordVC()
         navigationController?.pushViewController(vc2, animated: true)
     }
     
-    func customNavigation() {
+    func CustomNavRegister() {
         let vc: RegisterVC = RegisterVC()
         navigationController?.pushViewController(vc, animated: true)
      

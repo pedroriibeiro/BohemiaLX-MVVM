@@ -8,9 +8,9 @@
 import UIKit
 
 protocol HomeScreenProtocol: AnyObject {
-    func customNavigation()
-    func customNavigation2()
-    func customNavigation3()
+    func CustomNavRegister()
+    func customNavForgotPass()
+    func customNavNext()
     }
 
 class HomeScreen: UIView {
@@ -83,7 +83,7 @@ class HomeScreen: UIView {
     
     @objc func tappedNextButton(_ sender: UIButton) {
         print("ok")
-        delegate?.customNavigation3()
+        delegate?.customNavNext()
     }
     
     lazy var line1: UILabel = {
@@ -117,7 +117,7 @@ class HomeScreen: UIView {
     }()
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
-        delegate?.customNavigation()
+        delegate?.CustomNavRegister()
             print("okay")
         }
     
@@ -135,7 +135,7 @@ class HomeScreen: UIView {
     }()
     
     @objc func tappedForgotPassword(_ sender: UIButton) {
-        delegate?.customNavigation2()
+        delegate?.customNavForgotPass()
         print("Ok!!!")
     }
     

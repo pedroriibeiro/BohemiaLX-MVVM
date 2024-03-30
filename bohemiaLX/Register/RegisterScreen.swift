@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol RegisterScreenProtocol: AnyObject {
+    func customBody()
+}
+
 class RegisterScreen: UIView {
+    
+    private weak var delegate: RegisterScreenProtocol?
+    
+    public func delegate(delegate: RegisterScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -83,6 +93,8 @@ class RegisterScreen: UIView {
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
         print("ok")
+        delegate?.customBody()
+
     }
     
     private func addElements() {
