@@ -31,6 +31,7 @@ extension HomeVC: HomeScreenProtocol {
         // MARK: Altera o fluxo de navegação para a select ser a principal
 
         let nav = UINavigationController(rootViewController: vc3)
+        nav.modalPresentationStyle = .currentContext
         present(nav, animated: true)
     }
     

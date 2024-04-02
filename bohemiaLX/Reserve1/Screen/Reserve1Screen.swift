@@ -23,10 +23,15 @@ class Reserve1Screen: UIView {
         tv.showsVerticalScrollIndicator = false
         tv.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tv.layer.cornerRadius = 12
-        //TO DO: REGISTER
+        tv.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
         
         return tv
     }()
+    
+    public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +52,7 @@ class Reserve1Screen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 140),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
