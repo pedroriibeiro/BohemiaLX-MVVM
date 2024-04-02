@@ -45,8 +45,9 @@ class HomeTableViewCell: UITableViewCell {
     
     public func setupHomeCell() {
         screen.nameLabel.text = "Nome: "
-        screen.surnameLabel.text = "Sobrenome: "
+        screen.qtdLabel.text = "Quantidade: "
         screen.phoneLabel.text = "Telefone: "
+        screen.timeLabel.text = "Horário: "
     }
     
 }

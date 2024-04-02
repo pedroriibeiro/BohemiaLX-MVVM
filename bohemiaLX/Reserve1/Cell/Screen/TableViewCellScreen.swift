@@ -31,7 +31,7 @@ class HomeTableViewCellScreen: UIView {
         return label
     }()
     
-    lazy var surnameLabel: UILabel = {
+    lazy var qtdLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -47,6 +47,14 @@ class HomeTableViewCellScreen: UIView {
         return label
     }()
     
+    lazy var timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configSuperView()
@@ -55,8 +63,9 @@ class HomeTableViewCellScreen: UIView {
     
     private func configSuperView() {
         addSubview(nameLabel)
-        addSubview(surnameLabel)
+        addSubview(qtdLabel)
         addSubview(phoneLabel)
+        addSubview(timeLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -70,13 +79,17 @@ class HomeTableViewCellScreen: UIView {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            surnameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            surnameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            surnameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            qtdLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            qtdLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            qtdLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            phoneLabel.topAnchor.constraint(equalTo: surnameLabel.bottomAnchor, constant: 10),
+            phoneLabel.topAnchor.constraint(equalTo: qtdLabel.bottomAnchor, constant: 10),
             phoneLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             phoneLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            
+            timeLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 10),
+            timeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
         
         ])
         
