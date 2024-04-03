@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */; };
+		851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E62BBB2D20004BE371 /* TableViewCell.swift */; };
+		851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */; };
+		851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F72BBC7582004BE371 /* CreateReserveVC.swift */; };
 		8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB6E2BA4655C006CC784 /* RegisterVC.swift */; };
 		8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB722BA465AE006CC784 /* RegisterScreen.swift */; };
 		8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4BC2B93471A00913807 /* AppDelegate.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellScreen.swift; sourceTree = "<group>"; };
+		851678E62BBB2D20004BE371 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveScreen.swift; sourceTree = "<group>"; };
+		851678F72BBC7582004BE371 /* CreateReserveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveVC.swift; sourceTree = "<group>"; };
 		8557AB6E2BA4655C006CC784 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8557AB722BA465AE006CC784 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		8558D4B92B93471A00913807 /* bohemiaLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bohemiaLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,12 +71,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		851678DA2BBB295E004BE371 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				851678E62BBB2D20004BE371 /* TableViewCell.swift */,
+				851678DF2BBB2A9C004BE371 /* Screen */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		851678DF2BBB2A9C004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678E82BBB56F4004BE371 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8558D4C02B93471A00913807 /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		851678E92BBB5701004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8558D4D02B93496C00913807 /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678EA2BBB5721004BE371 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8557AB6E2BA4655C006CC784 /* RegisterVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		851678EB2BBB572B004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8557AB722BA465AE006CC784 /* RegisterScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678EC2BBB573E004BE371 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				856D5CA52BA7453300AF68F6 /* PasswordVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		851678ED2BBB5748004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678EE2BBB5780004BE371 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E22BB05D3700698EA7 /* SelectVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		851678EF2BBB5797004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E42BB05D8100698EA7 /* SelectScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678F02BBB57AE004BE371 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		851678F12BBB57B8004BE371 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		851678F22BBC714A004BE371 /* CreatReserve */ = {
+			isa = PBXGroup;
+			children = (
+				851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */,
+				851678F72BBC7582004BE371 /* CreateReserveVC.swift */,
+			);
+			path = CreatReserve;
+			sourceTree = "<group>";
+		};
 		8557AB6C2BA4651B006CC784 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				851678E82BBB56F4004BE371 /* Controller */,
+				851678E92BBB5701004BE371 /* Screen */,
 				85EEDF2E2BB48B93009ABE7C /* viewModel */,
-				8558D4C02B93471A00913807 /* HomeVC.swift */,
-				8558D4D02B93496C00913807 /* HomeScreen.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -76,8 +190,8 @@
 		8557AB6D2BA4653C006CC784 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				8557AB6E2BA4655C006CC784 /* RegisterVC.swift */,
-				8557AB722BA465AE006CC784 /* RegisterScreen.swift */,
+				851678EA2BBB5721004BE371 /* Controller */,
+				851678EB2BBB572B004BE371 /* Screen */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -101,6 +215,7 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				851678F22BBC714A004BE371 /* CreatReserve */,
 				858FD1EB2BB2220F00698EA7 /* Firebase */,
 				858FD1E62BB0A46800698EA7 /* Reserve1 */,
 				858FD1E12BB05CF100698EA7 /* SelectHouse */,
@@ -119,8 +234,8 @@
 		856D5CA42BA7450300AF68F6 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				856D5CA52BA7453300AF68F6 /* PasswordVC.swift */,
-				856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */,
+				851678ED2BBB5748004BE371 /* Screen */,
+				851678EC2BBB573E004BE371 /* Controller */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -128,8 +243,8 @@
 		858FD1E12BB05CF100698EA7 /* SelectHouse */ = {
 			isa = PBXGroup;
 			children = (
-				858FD1E22BB05D3700698EA7 /* SelectVC.swift */,
-				858FD1E42BB05D8100698EA7 /* SelectScreen.swift */,
+				851678EE2BBB5780004BE371 /* Controller */,
+				851678EF2BBB5797004BE371 /* Screen */,
 			);
 			path = SelectHouse;
 			sourceTree = "<group>";
@@ -137,8 +252,9 @@
 		858FD1E62BB0A46800698EA7 /* Reserve1 */ = {
 			isa = PBXGroup;
 			children = (
-				858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */,
-				858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */,
+				851678DA2BBB295E004BE371 /* Cell */,
+				851678F02BBB57AE004BE371 /* Controller */,
+				851678F12BBB57B8004BE371 /* Screen */,
 			);
 			path = Reserve1;
 			sourceTree = "<group>";
@@ -239,14 +355,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
+				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
+				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
+				851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */,
 				858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */,
 				8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */,
 				85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */,
+				851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */,
 				858FD1EA2BB0A4D300698EA7 /* Reserve1Screen.swift in Sources */,
 				856D5CA62BA7453300AF68F6 /* PasswordVC.swift in Sources */,
 				8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeTableViewCellScreen: UIView {
+class TableViewCellScreen: UIView {
 
     lazy var cardView: UIView = {
        let view = UIView()

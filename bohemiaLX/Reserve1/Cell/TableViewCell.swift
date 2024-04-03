@@ -7,12 +7,12 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
     
     static let identifier: String = "TableViewCell"
     
-    lazy var screen: HomeTableViewCellScreen = {
-        let view = HomeTableViewCellScreen()
+    lazy var screen: TableViewCellScreen = {
+        let view = TableViewCellScreen()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

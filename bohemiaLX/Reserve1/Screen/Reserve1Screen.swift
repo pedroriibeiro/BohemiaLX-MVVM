@@ -7,8 +7,18 @@
 
 import UIKit
 
+protocol Reserve1ScreenProtocol: AnyObject {
+    func customNavigation()
+}
 
 class Reserve1Screen: UIView {
+    
+    private weak var delegate: Reserve1ScreenProtocol?
+    
+    public func delegate(delegate: Reserve1ScreenProtocol?) {
+        self.delegate = delegate
+    }
+    
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -23,10 +33,30 @@ class Reserve1Screen: UIView {
         tv.showsVerticalScrollIndicator = false
         tv.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tv.layer.cornerRadius = 12
-        tv.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
         
         return tv
     }()
+    
+    lazy var plusButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("+", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.textColor = .black
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        button.titleLabel?.textAlignment = .right
+        button.backgroundColor = .none
+        button.addTarget(self, action: #selector(tappedPlusButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedPlusButton(_ sender: UIButton) {
+        print("ok")
+        delegate?.customNavigation()
+        
+    }
     
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate = delegate
@@ -47,6 +77,7 @@ class Reserve1Screen: UIView {
     private func addElements() {
         addSubview(subImageView)
         addSubview(tableView)
+        addSubview(plusButton)
     }
     
     private func configConstraints() {
@@ -55,7 +86,10 @@ class Reserve1Screen: UIView {
             tableView.topAnchor.constraint(equalTo: topAnchor, constant: 140),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
+            
+            plusButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
         
         ])
     }

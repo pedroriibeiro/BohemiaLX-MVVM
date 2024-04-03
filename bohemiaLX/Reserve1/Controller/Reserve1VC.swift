@@ -19,25 +19,37 @@ class Reserve1VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
+        reserve1Screen?.configProtocolsTableView(delegate: self, dataSource: self)
+        reserve1Screen?.delegate(delegate: self)
         
     }
     
 }
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as?
-        HomeTableViewCell
-        //cell?.setupHomeCell(data: viewModel.loadCurrentPerson(indexPath: indexPath))
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as?
+        TableViewCell
+        cell?.setupHomeCell()
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
+    
+}
+
+extension Reserve1VC: Reserve1ScreenProtocol {
+    func customNavigation() {
+        let vc3: CreateReserveVC = CreateReserveVC()
+        let nav = UINavigationController(rootViewController: vc3)
+        present(nav, animated: true)
+    }
+    
     
 }

@@ -18,16 +18,13 @@ class CreateReserveVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         createReserveScreen?.delegate(delegate: self)
-
     }
     
 }
 
 extension CreateReserveVC: CreateReserveScreenProtocol {
-    func customNavigation() {
-        <#code#>
-    }
-    
     
 }
+
