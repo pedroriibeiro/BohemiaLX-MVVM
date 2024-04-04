@@ -80,7 +80,7 @@ class CreateReserveScreen: UIView {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = .current
-        datePicker.backgroundColor = .white
+        datePicker.backgroundColor = .lightGray
         datePicker.tintColor = .systemBlue
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.minimumDate = Date()
@@ -92,6 +92,25 @@ class CreateReserveScreen: UIView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
+        delegate.self
+    }
+    
+    lazy var confirmButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Reservar", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        button.titleLabel?.textAlignment = .right
+        button.backgroundColor = .white.withAlphaComponent(0.9)
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(tappedConfirmButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedConfirmButton(_ sender: UIButton) {
+        print("ok")
+       // delegate?.customNavNext()
     }
     
     override init(frame: CGRect) {
@@ -110,12 +129,13 @@ class CreateReserveScreen: UIView {
         addSubview(quantidadeTextField)
         addSubview(contactoTextField)
         addSubview(selecDatePicker)
+        addSubview(confirmButton)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 80),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             emailTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
@@ -134,8 +154,9 @@ class CreateReserveScreen: UIView {
             selecDatePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
             selecDatePicker.widthAnchor.constraint(equalToConstant: 185),
             
-            
-            
+            confirmButton.topAnchor.constraint(equalTo: selecDatePicker.bottomAnchor, constant: 60),
+            confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            confirmButton.widthAnchor.constraint(equalToConstant: 200),
             
         ])
     }
