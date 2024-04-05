@@ -93,7 +93,7 @@ class SelectScreen: UIView {
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            LabelOne.topAnchor.constraint(equalTo: topAnchor, constant: 140),
+            LabelOne.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
             LabelOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             LabelOne.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             

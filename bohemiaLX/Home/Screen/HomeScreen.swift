@@ -169,7 +169,7 @@ class HomeScreen: UIView {
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 120),
+            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         
             emailTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 60),

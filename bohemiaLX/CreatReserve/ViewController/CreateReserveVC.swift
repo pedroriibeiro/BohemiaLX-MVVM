@@ -22,6 +22,14 @@ class CreateReserveVC: UIViewController {
         createReserveScreen?.delegate(delegate: self)
     }
     
+    struct Reservation {
+        let id: String // Identificador único da reserva
+        let name: String //
+        let numberOfPerson: Int // Quantidade de pessoas na reserva
+        let date: Date // Data da reserva
+        let time: String // Horário da reserva
+    }
+    
 }
 
 extension CreateReserveVC: CreateReserveScreenProtocol {

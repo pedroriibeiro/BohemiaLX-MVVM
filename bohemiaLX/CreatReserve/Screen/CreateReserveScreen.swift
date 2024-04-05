@@ -27,7 +27,7 @@ class CreateReserveScreen: UIView {
         return lb
     }()
     
-    lazy var emailTextField: UITextField = {
+    lazy var nameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
@@ -125,7 +125,7 @@ class CreateReserveScreen: UIView {
     
     private func addElements() {
         addSubview(titleLabel)
-        addSubview(emailTextField)
+        addSubview(nameTextField)
         addSubview(quantidadeTextField)
         addSubview(contactoTextField)
         addSubview(selecDatePicker)
@@ -135,14 +135,14 @@ class CreateReserveScreen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
-            emailTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
-            emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            emailTextField.widthAnchor.constraint(equalToConstant: 300),
+            nameTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
+            nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nameTextField.widthAnchor.constraint(equalToConstant: 300),
             
-            quantidadeTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
+            quantidadeTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 40),
             quantidadeTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             quantidadeTextField.widthAnchor.constraint(equalToConstant: 300),
             
@@ -160,5 +160,6 @@ class CreateReserveScreen: UIView {
             
         ])
     }
+    
 }
 

@@ -106,7 +106,7 @@ class PasswordScreen: UIView {
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            passwordLabel.topAnchor.constraint(equalTo: topAnchor,constant: 140),
+            passwordLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 80),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             
             passwordLabel2.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 60),

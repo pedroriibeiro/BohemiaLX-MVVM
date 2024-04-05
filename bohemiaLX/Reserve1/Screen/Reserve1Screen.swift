@@ -83,12 +83,12 @@ class Reserve1Screen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 140),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
             
-            plusButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            plusButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
         
         ])

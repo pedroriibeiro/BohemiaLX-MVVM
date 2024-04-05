@@ -124,7 +124,7 @@ class RegisterScreen: UIView {
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            registerLabel.topAnchor.constraint(equalTo: topAnchor,constant: 120),
+            registerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ,constant: 60),
             registerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             
             registerLabel2.topAnchor.constraint(equalTo: registerLabel.bottomAnchor, constant: 40),
