@@ -8,6 +8,7 @@
 import UIKit
 
 protocol CreateReserveScreenProtocol: AnyObject {
+    func didEnterData(data: Reservation)
 }
 
 class CreateReserveScreen: UIView {
@@ -92,7 +93,8 @@ class CreateReserveScreen: UIView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        delegate.self
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        //delegate.self
     }
     
     lazy var confirmButton: UIButton = {
@@ -110,8 +112,15 @@ class CreateReserveScreen: UIView {
     
     @objc func tappedConfirmButton(_ sender: UIButton) {
         print("ok")
-       // delegate?.customNavNext()
+        
+        
+        
+        let reservation = Reservation(name: nameTextField.text ?? "", numberOfPerson: 1, contact: contactoTextField.text ?? "", date:selecDatePicker.date)
+        
+        delegate?.didEnterData(data: reservation)
+        
     }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -159,6 +168,13 @@ class CreateReserveScreen: UIView {
             confirmButton.widthAnchor.constraint(equalToConstant: 200),
             
         ])
+    }
+    
+    public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+        nameTextField.delegate = delegate
+        contactoTextField.delegate = delegate
+        quantidadeTextField.delegate = delegate
+        
     }
     
 }

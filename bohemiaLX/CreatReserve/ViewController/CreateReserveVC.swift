@@ -10,29 +10,59 @@ import UIKit
 class CreateReserveVC: UIViewController {
 
     var createReserveScreen: CreateReserveScreen?
+    var createReserveViewModel: CreateReserveViewModel?
     
     override func loadView() {
         createReserveScreen = CreateReserveScreen()
         view = createReserveScreen
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         createReserveScreen?.delegate(delegate: self)
+        createReserveViewModel = CreateReserveViewModel()
+        createReserveScreen?.configTextFieldDelegate(delegate: self)
     }
     
-    struct Reservation {
-        let id: String // Identificador único da reserva
-        let name: String //
-        let numberOfPerson: Int // Quantidade de pessoas na reserva
-        let date: Date // Data da reserva
-        let time: String // Horário da reserva
-    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+           // Quando o usuário termina de editar o texto no campo de texto, você pode acessar o texto e convertê-lo para uma string
+           if let text = textField.text {
+               let stringFromTextField = String(text)
+               // Faça o que for necessário com a string aqui
+               print((stringFromTextField))
+           }
+       }
+
     
 }
+
+// MARK: Confirmar amanhã se essa lógica faz sentido
 
 extension CreateReserveVC: CreateReserveScreenProtocol {
+    func didEnterData(data: Reservation) {
+        
+        createReserveViewModel?.addReservation(reservation: data, completion: { _ in
+            
+        })
+    }
     
 }
 
+extension CreateReserveVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(#function)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        print(#function)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function)
+        textField.resignFirstResponder()
+        return false
+    }
+}

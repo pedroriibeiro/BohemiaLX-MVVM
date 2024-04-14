@@ -31,6 +31,7 @@
 		858FD1F22BB223FD00698EA7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F12BB223FD00698EA7 /* FirebaseAuth */; };
 		858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F32BB223FD00698EA7 /* FirebaseFirestore */; };
 		8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859012192BC03BD30046283C /* CreateReserveViewModel.swift */; };
+		85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AF621E2BC1A85D00564241 /* Reservation.swift */; };
 		85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1Screen.swift; sourceTree = "<group>"; };
 		858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		859012192BC03BD30046283C /* CreateReserveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveViewModel.swift; sourceTree = "<group>"; };
+		85AF621E2BC1A85D00564241 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D4CBB9AB388B0CC7218F72A4 /* Pods-bohemiaLX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bohemiaLX.debug.xcconfig"; path = "Target Support Files/Pods-bohemiaLX/Pods-bohemiaLX.debug.xcconfig"; sourceTree = "<group>"; };
 		DF1CF4E77046B876AB35832D /* Pods-bohemiaLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bohemiaLX.release.xcconfig"; path = "Target Support Files/Pods-bohemiaLX/Pods-bohemiaLX.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				859012192BC03BD30046283C /* CreateReserveViewModel.swift */,
+				85AF621E2BC1A85D00564241 /* Reservation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			files = (
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
 				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
+				85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
 				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,
