@@ -10,6 +10,7 @@ import UIKit
 class Reserve1VC: UIViewController {
     
     var reserve1Screen: Reserve1Screen?
+    var reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
     
     override func loadView() {
         reserve1Screen = Reserve1Screen()
@@ -24,11 +25,13 @@ class Reserve1VC: UIViewController {
         
     }
     
+    // didap
+    
 }
 
 extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return reserve1ViewModel.reservation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

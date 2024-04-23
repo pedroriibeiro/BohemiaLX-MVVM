@@ -33,7 +33,7 @@ class HomeScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "𝐁𝐨𝐡𝐞𝐦𝐢𝐚 𝐋𝐗"
         lb.textColor = .white
-        lb.font = .systemFont(ofSize: 50)
+        lb.font = .systemFont(ofSize: 40)
         return lb
     }()
     
@@ -74,7 +74,7 @@ class HomeScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Entrar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.titleLabel?.textAlignment = .right
         button.backgroundColor = .none
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
@@ -175,10 +175,12 @@ class HomeScreen: UIView {
             emailTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 60),
             emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
+            emailTextField.heightAnchor.constraint(equalToConstant: 36),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
             passwordTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             passwordTextField.widthAnchor.constraint(equalToConstant: 300),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 36),
             
             nextButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),

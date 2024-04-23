@@ -22,6 +22,7 @@
 		8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4D02B93496C00913807 /* HomeScreen.swift */; };
 		856D5CA62BA7453300AF68F6 /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D5CA52BA7453300AF68F6 /* PasswordVC.swift */; };
 		856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */; };
+		8572D7BC2BD7D1C9002BDCCB /* Reserve1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572D7BB2BD7D1C9002BDCCB /* Reserve1ViewModel.swift */; };
 		858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E22BB05D3700698EA7 /* SelectVC.swift */; };
 		858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E42BB05D8100698EA7 /* SelectScreen.swift */; };
 		858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */; };
@@ -53,6 +54,7 @@
 		8558D4D02B93496C00913807 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		856D5CA52BA7453300AF68F6 /* PasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
 		856D5CA72BA7458F00AF68F6 /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
+		8572D7BB2BD7D1C9002BDCCB /* Reserve1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1ViewModel.swift; sourceTree = "<group>"; };
 		858FD1E22BB05D3700698EA7 /* SelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVC.swift; sourceTree = "<group>"; };
 		858FD1E42BB05D8100698EA7 /* SelectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreen.swift; sourceTree = "<group>"; };
 		858FD1E72BB0A4B600698EA7 /* Reserve1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1VC.swift; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				851678E62BBB2D20004BE371 /* TableViewCell.swift */,
-				851678DF2BBB2A9C004BE371 /* Screen */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -286,6 +287,14 @@
 			path = Password;
 			sourceTree = "<group>";
 		};
+		8572D7BA2BD7D17F002BDCCB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8572D7BB2BD7D1C9002BDCCB /* Reserve1ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		858FD1E12BB05CF100698EA7 /* SelectHouse */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +307,8 @@
 		858FD1E62BB0A46800698EA7 /* Reserve1 */ = {
 			isa = PBXGroup;
 			children = (
-				851678DA2BBB295E004BE371 /* Cell */,
+				8572D7BA2BD7D17F002BDCCB /* ViewModel */,
+				85B203522BCD4F0A00446506 /* TableView */,
 				851678F02BBB57AE004BE371 /* Controller */,
 				851678F12BBB57B8004BE371 /* Screen */,
 			);
@@ -311,6 +321,15 @@
 				858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		85B203522BCD4F0A00446506 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				851678DF2BBB2A9C004BE371 /* Screen */,
+				851678DA2BBB295E004BE371 /* Cell */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		85EEDF2E2BB48B93009ABE7C /* viewModel */ = {
@@ -437,6 +456,7 @@
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
 				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
 				85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */,
+				8572D7BC2BD7D1C9002BDCCB /* Reserve1ViewModel.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
 				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,

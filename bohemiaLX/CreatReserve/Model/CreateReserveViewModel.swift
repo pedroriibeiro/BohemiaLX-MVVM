@@ -14,8 +14,14 @@ class CreateReserveViewModel {
     
     func addReservation(reservation: Reservation, completion: @escaping(Result<Void, Error>) -> Void) {
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let  selecDate = dateFormatter.string(from: reservation.date)
+        
         let db = Firestore.firestore()
-        db.collection("reservations/1/2024-04-08").document(reservation.id).setData([
+        db.collection("reservations/1/\(selecDate)").document(reservation.id).setData([
             "name": reservation.name,
             "numberOfPerson": reservation.numberOfPerson,
             "date": reservation.date,
@@ -32,40 +38,13 @@ class CreateReserveViewModel {
     }
     
     // MARK: Preciso procurar a documentação para que o filtro se aplique para ser atualizado todos os dias com as informações apenas do dia
-    func getReserve() -> [Reservation] {
-        
-        let db = Firestore.firestore()
-        db.collection("reservations").getDocuments(completion: { snapshot, error in
-            guard let snapshot else {
-                print("Não foi possível buscar as informações", error)
-                return
-            }
-            
-            for reservation in snapshot.documents {
-                let reservations = reservation.data()
-                
-                let name = reservations["name"] as? String ?? ""
-                let numberOfPerson = reservations["numberOfPerson"] as? Int ?? 0
-                let contato = reservations["contato"] as? String ?? ""
-                let date = reservations["date"] as? Date ?? Date.now
-                let reservation = Reservation(name: name,
-                                              numberOfPerson: numberOfPerson,
-                                              contact: contato,
-                                              date: date)
-                self.reservations.append(reservation)
-                
-            }
-        })
-        
-        return reservations
-    }
     
-    // MARK: Abaixar teclado
-    
-    public func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//    // MARK: Abaixar teclado
+//    
+//    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     
 }
 

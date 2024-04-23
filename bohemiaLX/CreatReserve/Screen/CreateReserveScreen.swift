@@ -13,6 +13,8 @@ protocol CreateReserveScreenProtocol: AnyObject {
 
 class CreateReserveScreen: UIView {
     
+    var selecDate: String?
+    
     private weak var delegate: CreateReserveScreenProtocol?
     public func delegate(delegate: CreateReserveScreenProtocol?) {
         self.delegate = delegate
@@ -94,6 +96,8 @@ class CreateReserveScreen: UIView {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        selecDate = dateFormatter.string(from: sender.date)
+        print("Data: \(selecDate ?? "")")
         //delegate.self
     }
     
@@ -113,9 +117,7 @@ class CreateReserveScreen: UIView {
     @objc func tappedConfirmButton(_ sender: UIButton) {
         print("ok")
         
-        
-        
-        let reservation = Reservation(name: nameTextField.text ?? "", numberOfPerson: 1, contact: contactoTextField.text ?? "", date:selecDatePicker.date)
+        let reservation = Reservation(name: nameTextField.text ?? "", numberOfPerson: 1, contact: contactoTextField.text ?? "", date: selecDatePicker.date)
         
         delegate?.didEnterData(data: reservation)
         

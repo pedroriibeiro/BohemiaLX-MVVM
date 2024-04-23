@@ -12,7 +12,7 @@ import Foundation
         let name: String //
         let numberOfPerson: Int // Quantidade de pessoas na reserva
         let contact: String
-        let date: Date // Data da reserva
+        let date: Date
     }
     
 
