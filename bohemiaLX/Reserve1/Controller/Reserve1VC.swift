@@ -25,12 +25,21 @@ class Reserve1VC: UIViewController {
         
     }
     
-    // didap
+    override func viewDidAppear(_ animated: Bool) {
+        reserve1ViewModel.reservation
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.reserve1Screen?.tableView.reloadData()
+        }
+    }
     
 }
 
 extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(reserve1ViewModel.reservation.count)
         return reserve1ViewModel.reservation.count
     }
     

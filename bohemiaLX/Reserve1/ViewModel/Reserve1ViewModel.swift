@@ -38,7 +38,14 @@ class Reserve1ViewModel: NSObject {
                                               contact: contato,
                                               date: date)
             }
-            //completion
+            // AQUI CRIEI O COMPLETION QUE O POLI PEDIU
+            if let error = error {
+                print("erro")
+                completion(.failure(error))
+            } else {
+                print("sucesso ao receber dados")
+                completion(.success(self.reservation))
+            }
                     })
     
     }
