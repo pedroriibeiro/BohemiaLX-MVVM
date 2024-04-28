@@ -19,32 +19,28 @@ class SelectScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var subImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "azulzao")
-        return image
-    }()
-    
     lazy var LabelOne: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = " Selecione a unidade que deseja acessar: "
+        lb.text = "Selecione a unidade que deseja acessar: "
         lb.textAlignment = .left
         lb.numberOfLines = 0
-        lb.font = .boldSystemFont(ofSize: 24)
+        lb.font = .boldSystemFont(ofSize: 22)
         lb.textColor = .white
         return lb
     }()
-
+    
     lazy var stAntonioButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("⚪️  BohemiaLX - Santo António", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.titleLabel?.textAlignment = .left
-        button.backgroundColor = .none
+        button.backgroundColor = .lightGray
+        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+                             , for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.textAlignment = .natural
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedStAntonioButton), for: .touchUpInside)
         return button
     }()
@@ -58,10 +54,12 @@ class SelectScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("⚪️  BohemiaLX - Sé", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.titleLabel?.textAlignment = .left
-        button.backgroundColor = .none
+        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+                             , for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.textAlignment = .natural
+        button.layer.cornerRadius = 12
+        button.backgroundColor = .lightGray
         button.addTarget(self, action: #selector(tappedSeButton), for: .touchUpInside)
         return button
     }()
@@ -80,7 +78,6 @@ class SelectScreen: UIView {
     }
     
     private func addElements() {
-        addSubview(subImageView)
         addSubview(LabelOne)
         addSubview(stAntonioButton)
         addSubview(seButton)
@@ -88,20 +85,18 @@ class SelectScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            subImageView.topAnchor.constraint(equalTo: topAnchor),
-            subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            LabelOne.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
-            LabelOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            LabelOne.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            LabelOne.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 120),
+            LabelOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            LabelOne.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
-            stAntonioButton.topAnchor.constraint(equalTo: LabelOne.bottomAnchor,constant: 100),
+            stAntonioButton.topAnchor.constraint(equalTo: LabelOne.bottomAnchor,constant: 60),
             stAntonioButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
+            stAntonioButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
-            seButton.topAnchor.constraint(equalTo: stAntonioButton.bottomAnchor, constant: 60),
-            seButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 40)
+            seButton.topAnchor.constraint(equalTo: stAntonioButton.bottomAnchor, constant: 40),
+            seButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
+            seButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
         ])
     }

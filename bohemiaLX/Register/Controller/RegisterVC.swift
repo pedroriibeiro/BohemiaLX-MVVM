@@ -15,7 +15,7 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerScreen?.delegate(delegate: self)
-
+        view.backgroundColor = (UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0))
     }
     
     override func loadView() {

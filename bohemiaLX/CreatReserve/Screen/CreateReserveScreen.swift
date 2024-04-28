@@ -23,10 +23,10 @@ class CreateReserveScreen: UIView {
     lazy var titleLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.font = .boldSystemFont(ofSize: 30)
         lb.text = "Criar nova reserva"
-        lb.textAlignment = .left
+        lb.textAlignment = .center
         lb.textColor = .white
-        lb.font = .systemFont(ofSize: 30)
         return lb
     }()
     
@@ -34,15 +34,15 @@ class CreateReserveScreen: UIView {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
-        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do cliente", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do cliente", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
         tf.textColor = .white
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
         tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.white.cgColor
+        tf.layer.borderColor = UIColor.black.cgColor
         return tf
     }()
     
@@ -50,10 +50,10 @@ class CreateReserveScreen: UIView {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
-        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.attributedPlaceholder = NSAttributedString(string: "Informe a quantidade de pessoas", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
+        tf.attributedPlaceholder = NSAttributedString(string: "Informe a quantidade de pessoas", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
         tf.textColor = .white
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
@@ -66,10 +66,10 @@ class CreateReserveScreen: UIView {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
-        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.attributedPlaceholder = NSAttributedString(string: "Contacto (opcional)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
+        tf.attributedPlaceholder = NSAttributedString(string: "Contacto (opcional)", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
         tf.textColor = .white
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
@@ -83,7 +83,7 @@ class CreateReserveScreen: UIView {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = .current
-        datePicker.backgroundColor = .lightGray
+        datePicker.backgroundColor = .white
         datePicker.tintColor = .systemBlue
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.minimumDate = Date()
@@ -105,10 +105,10 @@ class CreateReserveScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Reservar", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
         button.titleLabel?.textAlignment = .right
-        button.backgroundColor = .white.withAlphaComponent(0.9)
+        button.backgroundColor = .white
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedConfirmButton), for: .touchUpInside)
         return button
@@ -146,8 +146,10 @@ class CreateReserveScreen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             nameTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
             nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -163,7 +165,7 @@ class CreateReserveScreen: UIView {
             
             selecDatePicker.topAnchor.constraint(equalTo: contactoTextField.bottomAnchor, constant: 40),
             selecDatePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
-            selecDatePicker.widthAnchor.constraint(equalToConstant: 185),
+            selecDatePicker.widthAnchor.constraint(equalToConstant: 200),
             
             confirmButton.topAnchor.constraint(equalTo: selecDatePicker.bottomAnchor, constant: 60),
             confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor),

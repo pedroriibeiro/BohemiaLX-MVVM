@@ -12,6 +12,7 @@ class Reserve1VC: UIViewController {
     var reserve1Screen: Reserve1Screen?
     var reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
     
+    
     override func loadView() {
         reserve1Screen = Reserve1Screen()
         view = reserve1Screen
@@ -19,7 +20,7 @@ class Reserve1VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         reserve1Screen?.configProtocolsTableView(delegate: self, dataSource: self)
         reserve1Screen?.delegate(delegate: self)
         
@@ -46,7 +47,7 @@ extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as?
         TableViewCell
-        cell?.setupHomeCell()
+        cell?.setupHomeCell(data: reserve1ViewModel.loadCurrentReserve(indexPath: indexPath))
         return cell ?? UITableViewCell()
     }
     

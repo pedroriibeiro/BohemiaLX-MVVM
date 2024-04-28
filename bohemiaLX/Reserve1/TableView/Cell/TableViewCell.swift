@@ -43,11 +43,21 @@ class TableViewCell: UITableViewCell {
         ])
     }
     
-    public func setupHomeCell() {
-        screen.nameLabel.text = "Nome: "
-        screen.qtdLabel.text = "Quantidade: "
-        screen.phoneLabel.text = "Telefone: "
+//    public func setupHomeCell() {
+//        screen.nameLabel.text = "Nome: "
+//        screen.qtdLabel.text = "Quantidade: "
+//        screen.phoneLabel.text = "Telefone: "
+//        screen.timeLabel.text = "Horário: "
+//    }
+    
+    public func setupHomeCell(data: Reservation) {
+          //  screen.iconBrawl.image = UIImage(named: data.iconBrawl ?? "")
+           // screen.nameBrawler.text = data.name ?? ""
+        screen.nameLabel.text = "Nome: \(data.name)"
+      //  screen.qtdLabel.text = String(data.numberOfPerson)
+        screen.qtdLabel.text = "Quantidade \(data.numberOfPerson)"
+        screen.phoneLabel.text = "Contato: \(data.contact)"
         screen.timeLabel.text = "Horário: "
-    }
+        }
     
 }

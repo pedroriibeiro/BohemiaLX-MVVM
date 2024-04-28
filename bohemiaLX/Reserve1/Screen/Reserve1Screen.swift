@@ -19,19 +19,11 @@ class Reserve1Screen: UIView {
         self.delegate = delegate
     }
     
-    
-    lazy var subImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "azulzao")
-        return image
-    }()
-    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.showsVerticalScrollIndicator = false
-        tv.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tv.backgroundColor = .lightGray
         tv.layer.cornerRadius = 12
         tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
         
@@ -75,7 +67,6 @@ class Reserve1Screen: UIView {
     }
     
     private func addElements() {
-        addSubview(subImageView)
         addSubview(tableView)
         addSubview(plusButton)
     }

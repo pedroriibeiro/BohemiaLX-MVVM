@@ -18,13 +18,6 @@ class PasswordScreen: UIView {
     public func delegate(delegate: PasswordScreenProtocol?) {
         self.delegate = delegate
     }
-
-    lazy var subImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "azulzao")
-        return image
-    }()
     
     lazy var passwordLabel: UILabel = {
         let lb = UILabel()
@@ -91,7 +84,6 @@ class PasswordScreen: UIView {
     }
     
     private func addElements() {
-        addSubview(subImageView)
         addSubview(passwordLabel)
         addSubview(passwordLabel2)
         addSubview(emailTextField)
@@ -100,11 +92,6 @@ class PasswordScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-        
-            subImageView.topAnchor.constraint(equalTo: topAnchor),
-            subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             passwordLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 80),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),

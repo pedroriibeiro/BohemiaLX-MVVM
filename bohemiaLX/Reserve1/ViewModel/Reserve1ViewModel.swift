@@ -34,9 +34,9 @@ class Reserve1ViewModel: NSObject {
                 let contato = reservations["contato"] as? String ?? ""
                 let date = reservations["date"] as? Date ?? Date()
                 return Reservation(name: name,
-                                              numberOfPerson: numberOfPerson,
-                                              contact: contato,
-                                              date: date)
+                                   numberOfPerson: numberOfPerson,
+                                   contact: contato,
+                                   date: date)
             }
             // AQUI CRIEI O COMPLETION QUE O POLI PEDIU
             if let error = error {
@@ -46,8 +46,13 @@ class Reserve1ViewModel: NSObject {
                 print("sucesso ao receber dados")
                 completion(.success(self.reservation))
             }
-                    })
-    
+        })
+        
     }
-
+    
+    func loadCurrentReserve(indexPath: IndexPath) -> Reservation {
+        
+        return reservation[indexPath.row]
+    }
+    
 }

@@ -19,13 +19,6 @@ class RegisterScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var subImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "azulzao")
-        return image
-    }()
-    
     lazy var registerLabel: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +91,6 @@ class RegisterScreen: UIView {
     }
     
     private func addElements() {
-        addSubview(subImageView)
         addSubview(registerLabel)
         addSubview(registerLabel2)
         addSubview(emailTextField)
@@ -118,11 +110,6 @@ class RegisterScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            
-            subImageView.topAnchor.constraint(equalTo: topAnchor),
-            subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             registerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor ,constant: 60),
             registerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),

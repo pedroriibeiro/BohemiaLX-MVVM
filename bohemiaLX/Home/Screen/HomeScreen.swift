@@ -24,17 +24,8 @@ class HomeScreen: UIView {
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "azulzao")
+        image.image = UIImage(named: "bofc2")
         return image
-    }()
-    
-    lazy var nameLabel: UILabel = {
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "𝐁𝐨𝐡𝐞𝐦𝐢𝐚 𝐋𝐗"
-        lb.textColor = .white
-        lb.font = .systemFont(ofSize: 40)
-        return lb
     }()
     
     lazy var emailTextField: UITextField = {
@@ -73,10 +64,12 @@ class HomeScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Entrar", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.textAlignment = .right
-        button.backgroundColor = .none
+        button.backgroundColor = .lightGray
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         return button
     }()
@@ -85,24 +78,6 @@ class HomeScreen: UIView {
         print("ok")
         delegate?.customNavNext()
     }
-    
-    lazy var line1: UILabel = {
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "----------------"
-        lb.textColor = .white
-        lb.font = .systemFont(ofSize: 20)
-        return lb
-    }()
-    
-    lazy var line2: UILabel = {
-        let lb = UILabel()
-        lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "----------------"
-        lb.textColor = .white
-        lb.font = .systemFont(ofSize: 20)
-        return lb
-    }()
     
     lazy var registerButton: UIButton = {
         let button: UIButton = UIButton()
@@ -153,10 +128,7 @@ class HomeScreen: UIView {
         addSubview(subImageView)
         addSubview(emailTextField)
         addSubview(passwordTextField)
-        addSubview(nameLabel)
         addSubview(nextButton)
-        addSubview(line1)
-        addSubview(line2)
         addSubview(registerButton)
         addSubview(forgotPassword)
     }
@@ -168,11 +140,8 @@ class HomeScreen: UIView {
             subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
-            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         
-            emailTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 60),
+            emailTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 136),
             emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
             emailTextField.heightAnchor.constraint(equalToConstant: 36),
@@ -186,19 +155,11 @@ class HomeScreen: UIView {
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             nextButton.widthAnchor.constraint(equalToConstant: 150),
             
-            line1.topAnchor.constraint(equalTo: nextButton.topAnchor, constant: -10),
-            line1.centerXAnchor.constraint(equalTo: centerXAnchor),
-            line1.widthAnchor.constraint(equalToConstant: 150),
-            
-            line2.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: -15),
-            line2.centerXAnchor.constraint(equalTo: centerXAnchor),
-            line2.widthAnchor.constraint(equalToConstant: 150),
-            
-            registerButton.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 60),
+            registerButton.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 40),
             registerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             registerButton.widthAnchor.constraint(equalToConstant: 150),
             
-            forgotPassword.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 120),
+            forgotPassword.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 100),
             forgotPassword.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             forgotPassword.widthAnchor.constraint(equalToConstant: 200),
            
