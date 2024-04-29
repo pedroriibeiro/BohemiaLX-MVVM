@@ -38,7 +38,7 @@ class CreateReserveScreen: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do cliente", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
-        tf.textColor = .white
+        tf.textColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
         tf.layer.borderWidth = 1.0
@@ -54,7 +54,7 @@ class CreateReserveScreen: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
         tf.attributedPlaceholder = NSAttributedString(string: "Informe a quantidade de pessoas", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
-        tf.textColor = .white
+        tf.textColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
         tf.layer.borderWidth = 1.0
@@ -70,7 +70,7 @@ class CreateReserveScreen: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
         tf.attributedPlaceholder = NSAttributedString(string: "Contacto (opcional)", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)])
-        tf.textColor = .white
+        tf.textColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
         tf.layer.borderWidth = 1.0
@@ -84,7 +84,7 @@ class CreateReserveScreen: UIView {
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = .current
         datePicker.backgroundColor = .white
-        datePicker.tintColor = .systemBlue
+        datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -120,6 +120,8 @@ class CreateReserveScreen: UIView {
         let reservation = Reservation(name: nameTextField.text ?? "", numberOfPerson: 1, contact: contactoTextField.text ?? "", date: selecDatePicker.date)
         
         delegate?.didEnterData(data: reservation)
+        
+        
         
     }
     

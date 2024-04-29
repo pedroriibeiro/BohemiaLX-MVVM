@@ -24,6 +24,7 @@ class CreateReserveViewModel {
         db.collection("reservations/1/\(selecDate)").document(reservation.id).setData([
             "name": reservation.name,
             "numberOfPerson": reservation.numberOfPerson,
+            "contato": reservation.contact,
             "date": reservation.date,
             
         ]) { error in
@@ -37,14 +38,6 @@ class CreateReserveViewModel {
         }
     }
     
-    // MARK: Preciso procurar a documentação para que o filtro se aplique para ser atualizado todos os dias com as informações apenas do dia
-    
-//    // MARK: Abaixar teclado
-//    
-//    public func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
     
 }
 
