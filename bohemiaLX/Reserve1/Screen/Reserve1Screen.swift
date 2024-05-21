@@ -19,6 +19,17 @@ class Reserve1Screen: UIView {
         self.delegate = delegate
     }
     
+    lazy var labelData: UILabel = {
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = "yyyy-MM-dd"
+        lb.textAlignment = .left
+        lb.numberOfLines = 0
+        lb.font = .boldSystemFont(ofSize: 18)
+        lb.textColor = .lightGray
+        return lb
+    }()
+    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +66,10 @@ class Reserve1Screen: UIView {
         tableView.dataSource = dataSource
     }
     
+    public func configDateLabel(data: String) {
+        labelData.text = data
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
@@ -67,12 +82,16 @@ class Reserve1Screen: UIView {
     }
     
     private func addElements() {
+        addSubview(labelData)
         addSubview(tableView)
         addSubview(plusButton)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
+            
+            labelData.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            labelData.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),

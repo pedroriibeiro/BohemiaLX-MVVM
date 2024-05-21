@@ -57,7 +57,7 @@ class TableViewCell: UITableViewCell {
       //  screen.qtdLabel.text = String(data.numberOfPerson)
         screen.qtdLabel.text = "Quantidade \(data.numberOfPerson)"
         screen.phoneLabel.text = "Contato: \(data.contact)"
-        screen.timeLabel.text = "Horário: "
+        screen.timeLabel.text = "Horário: \(data.date.getDateString(format: "HH:mm"))"
         }
     
 }

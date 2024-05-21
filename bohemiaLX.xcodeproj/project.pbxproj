@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04650B45AA0739F4C427B14C /* Pods_bohemiaLX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FA5F08B5B4DD259E70DD11 /* Pods_bohemiaLX.framework */; };
+		8510E6BE2BE12EDE00FCE404 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */; };
 		851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */; };
 		851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E62BBB2D20004BE371 /* TableViewCell.swift */; };
 		851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		52FA5F08B5B4DD259E70DD11 /* Pods_bohemiaLX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bohemiaLX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellScreen.swift; sourceTree = "<group>"; };
 		851678E62BBB2D20004BE371 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveScreen.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 				DF1CF4E77046B876AB35832D /* Pods-bohemiaLX.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8510E6BC2BE12EB500FCE404 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		851678DA2BBB295E004BE371 /* Cell */ = {
@@ -237,6 +247,7 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				8510E6BC2BE12EB500FCE404 /* Utils */,
 				851678F22BBC714A004BE371 /* CreatReserve */,
 				858FD1EB2BB2220F00698EA7 /* Firebase */,
 				858FD1E62BB0A46800698EA7 /* Reserve1 */,
@@ -466,6 +477,7 @@
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
 				851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */,
 				858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */,
+				8510E6BE2BE12EDE00FCE404 /* Date+extension.swift in Sources */,
 				8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */,
 				85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */,
 				851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */,

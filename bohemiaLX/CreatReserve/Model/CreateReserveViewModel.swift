@@ -21,21 +21,21 @@ class CreateReserveViewModel {
         let  selecDate = dateFormatter.string(from: reservation.date)
         
         let db = Firestore.firestore()
-        db.collection("reservations/1/\(selecDate)").document(reservation.id).setData([
-            "name": reservation.name,
-            "numberOfPerson": reservation.numberOfPerson,
-            "contato": reservation.contact,
-            "date": reservation.date,
-            
-        ]) { error in
-            if let error = error {
-                print("Não foi possível localizar os dados")
-                completion(.failure(error))
-            } else {
-                print("Sucesso ao buscar os dados")
-                completion(.success(()))
+        db.collection("reservations/1/\(selecDate)")
+            .addDocument(data:  ["name": reservation.name,
+                                 "numberOfPerson": reservation.numberOfPerson,
+                                 "contato": reservation.contact,
+                                 "date": reservation.date
+                                 
+                                ]) { error in
+                if let error = error {
+                    print("Não foi possível localizar os dados")
+                    completion(.failure(error))
+                } else {
+                    print("Sucesso ao buscar os dados")
+                    completion(.success(()))
+                }
             }
-        }
     }
     
     

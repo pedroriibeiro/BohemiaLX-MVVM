@@ -8,7 +8,7 @@
 import Foundation
     
     struct Reservation {
-        let id: String = UUID().uuidString
+        let id: String 
         let name: String //
         let numberOfPerson: Int // Quantidade de pessoas na reserva
         let contact: String
