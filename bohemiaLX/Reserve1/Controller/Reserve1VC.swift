@@ -68,20 +68,35 @@ extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (_, _, completionHandler) in
             guard let self = self else { return }
             
-            let reservation = reserve1ViewModel.reservation[indexPath.row]
-            let reservationID = reservation.id
-            let date = reservation.date
-            
-            reserve1ViewModel.deleteReservation(reservationID: reservationID, date: date) { result in
-                switch result {
-                case .success:
-                    self.reserve1ViewModel.getReserve()
-                   
-                case .failure(let error):
-                    print("Erro ao excluir a reserva:", error)
+            let messageAlert = UIAlertController(title: "Excluir reserva", message: "Tem certeza que deseja excluir?", preferredStyle: .alert)
+            let cancelDelete = UIAlertAction(title: "Cancelar", style: .cancel, handler: { _ in
+                completionHandler(false)
+            })
+            let confirmAction = UIAlertAction(title: "Confirmar", style: .destructive, handler: { _ in
+                
+                
+                
+                let reservation = self.reserve1ViewModel.reservation[indexPath.row]
+                let reservationID = reservation.id
+                let date = reservation.date
+                
+                self.reserve1ViewModel.deleteReservation(reservationID: reservationID, date: date) { result in
+                    switch result {
+                    case .success:
+                        self.reserve1ViewModel.getReserve()
+                        
+                    case .failure(let error):
+                        print("Erro ao excluir a reserva:", error)
+                    }
+                    completionHandler(true)
                 }
-                completionHandler(true)
-            }
+            })
+            
+            messageAlert.addAction(cancelDelete)
+            messageAlert.addAction(confirmAction)
+            
+            self.present(messageAlert, animated: true, completion: nil)
+            
         }
         let configSwipe = UISwipeActionsConfiguration(actions: [deleteAction])
         configSwipe.performsFirstActionWithFullSwipe = false

@@ -34,6 +34,12 @@ class CreateReserveVC: UIViewController {
         createReserveScreen?.delegate(delegate: self)
         createReserveViewModel = CreateReserveViewModel()
         createReserveScreen?.configTextFieldDelegate(delegate: self)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
