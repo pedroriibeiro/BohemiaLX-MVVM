@@ -34,6 +34,15 @@
 		858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F32BB223FD00698EA7 /* FirebaseFirestore */; };
 		8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859012192BC03BD30046283C /* CreateReserveViewModel.swift */; };
 		85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AF621E2BC1A85D00564241 /* Reservation.swift */; };
+		85C463E52BFF758600617A12 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463E42BFF758600617A12 /* RegisterModel.swift */; };
+		85C463E82BFF75A300617A12 /* PasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463E72BFF75A300617A12 /* PasswordModel.swift */; };
+		85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EA2BFF75CE00617A12 /* SelecModel.swift */; };
+		85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463ED2BFF76C600617A12 /* Reserve2VC.swift */; };
+		85C463F02BFF76E500617A12 /* Reserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */; };
+		85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463F12BFF770400617A12 /* Reserve2Model.swift */; };
+		85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */; };
+		85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */; };
+		85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */; };
 		85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +73,15 @@
 		858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		859012192BC03BD30046283C /* CreateReserveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveViewModel.swift; sourceTree = "<group>"; };
 		85AF621E2BC1A85D00564241 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		85C463E42BFF758600617A12 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		85C463E72BFF75A300617A12 /* PasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModel.swift; sourceTree = "<group>"; };
+		85C463EA2BFF75CE00617A12 /* SelecModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecModel.swift; sourceTree = "<group>"; };
+		85C463ED2BFF76C600617A12 /* Reserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2VC.swift; sourceTree = "<group>"; };
+		85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Screen.swift; sourceTree = "<group>"; };
+		85C463F12BFF770400617A12 /* Reserve2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Model.swift; sourceTree = "<group>"; };
+		85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2VC.swift; sourceTree = "<group>"; };
+		85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2ViewModel.swift; sourceTree = "<group>"; };
+		85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2Screen.swift; sourceTree = "<group>"; };
 		85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D4CBB9AB388B0CC7218F72A4 /* Pods-bohemiaLX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bohemiaLX.debug.xcconfig"; path = "Target Support Files/Pods-bohemiaLX/Pods-bohemiaLX.debug.xcconfig"; sourceTree = "<group>"; };
 		DF1CF4E77046B876AB35832D /* Pods-bohemiaLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bohemiaLX.release.xcconfig"; path = "Target Support Files/Pods-bohemiaLX/Pods-bohemiaLX.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +238,7 @@
 		8557AB6D2BA4653C006CC784 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				85C463E32BFF756A00617A12 /* Model */,
 				851678EA2BBB5721004BE371 /* Controller */,
 				851678EB2BBB572B004BE371 /* Screen */,
 			);
@@ -247,6 +266,8 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				85C463F62BFF82B100617A12 /* CreateReserve2 */,
+				85C463EC2BFF76A200617A12 /* Reserve2 */,
 				8510E6BC2BE12EB500FCE404 /* Utils */,
 				851678F22BBC714A004BE371 /* CreatReserve */,
 				858FD1EB2BB2220F00698EA7 /* Firebase */,
@@ -292,6 +313,7 @@
 		856D5CA42BA7450300AF68F6 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				85C463E62BFF759300617A12 /* Model */,
 				851678ED2BBB5748004BE371 /* Screen */,
 				851678EC2BBB573E004BE371 /* Controller */,
 			);
@@ -309,6 +331,7 @@
 		858FD1E12BB05CF100698EA7 /* SelectHouse */ = {
 			isa = PBXGroup;
 			children = (
+				85C463E92BFF75BB00617A12 /* Model */,
 				851678EE2BBB5780004BE371 /* Controller */,
 				851678EF2BBB5797004BE371 /* Screen */,
 			);
@@ -341,6 +364,98 @@
 				851678DA2BBB295E004BE371 /* Cell */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		85C463E32BFF756A00617A12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85C463E42BFF758600617A12 /* RegisterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463E62BFF759300617A12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85C463E72BFF75A300617A12 /* PasswordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463E92BFF75BB00617A12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85C463EA2BFF75CE00617A12 /* SelecModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463EC2BFF76A200617A12 /* Reserve2 */ = {
+			isa = PBXGroup;
+			children = (
+				85C463F52BFF771E00617A12 /* Controller */,
+				85C463F42BFF771500617A12 /* Screen */,
+				85C463F32BFF770900617A12 /* Model */,
+			);
+			path = Reserve2;
+			sourceTree = "<group>";
+		};
+		85C463F32BFF770900617A12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85C463F12BFF770400617A12 /* Reserve2Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463F42BFF771500617A12 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		85C463F52BFF771E00617A12 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85C463ED2BFF76C600617A12 /* Reserve2VC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		85C463F62BFF82B100617A12 /* CreateReserve2 */ = {
+			isa = PBXGroup;
+			children = (
+				85C463F92BFF82EE00617A12 /* Controller */,
+				85C463F82BFF82E600617A12 /* Screen */,
+				85C463F72BFF82D900617A12 /* Model */,
+			);
+			path = CreateReserve2;
+			sourceTree = "<group>";
+		};
+		85C463F72BFF82D900617A12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463F82BFF82E600617A12 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		85C463F92BFF82EE00617A12 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		85EEDF2E2BB48B93009ABE7C /* viewModel */ = {
@@ -464,21 +579,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */,
+				85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */,
+				85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */,
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
 				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
+				85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */,
 				85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */,
 				8572D7BC2BD7D1C9002BDCCB /* Reserve1ViewModel.swift in Sources */,
+				85C463E82BFF75A300617A12 /* PasswordModel.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
+				85C463E52BFF758600617A12 /* RegisterModel.swift in Sources */,
 				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
+				85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
+				85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */,
 				8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */,
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
 				851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */,
 				858FD1E52BB05D8100698EA7 /* SelectScreen.swift in Sources */,
 				8510E6BE2BE12EDE00FCE404 /* Date+extension.swift in Sources */,
 				8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */,
+				85C463F02BFF76E500617A12 /* Reserve2Screen.swift in Sources */,
 				85EEDF302BB48BBB009ABE7C /* HomeViewModel.swift in Sources */,
 				851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */,
 				858FD1EA2BB0A4D300698EA7 /* Reserve1Screen.swift in Sources */,

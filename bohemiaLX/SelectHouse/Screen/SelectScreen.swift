@@ -9,6 +9,7 @@ import UIKit
 
 protocol SelectScreenProtocol: AnyObject {
     func customNavigation()
+    func customNavigation2()
 }
 
 class SelectScreen: UIView {
@@ -66,6 +67,7 @@ class SelectScreen: UIView {
     
     @objc func tappedSeButton(_ sender: UIButton) {
         print("okay!")
+        delegate?.customNavigation2()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)

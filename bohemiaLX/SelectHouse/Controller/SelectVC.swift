@@ -26,9 +26,14 @@ class SelectVC: UIViewController {
 }
 
 extension SelectVC: SelectScreenProtocol {
-    func customNavigation() {
-        let vc2: Reserve1VC = Reserve1VC()
+    func customNavigation2() {
+        let vc2: Reserve2VC = Reserve2VC()
         navigationController?.pushViewController(vc2, animated: true)
+    }
+    
+    func customNavigation() {
+        let vc1: Reserve1VC = Reserve1VC()
+        navigationController?.pushViewController(vc1, animated: true)
         
     }
     
