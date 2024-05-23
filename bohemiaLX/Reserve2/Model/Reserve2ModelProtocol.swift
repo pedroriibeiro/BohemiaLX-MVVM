@@ -8,18 +8,18 @@
 import Firebase
 import UIKit
 
-protocol Reserve2ViewModelProtocol: AnyObject {
+protocol Reserve2ModelProtocol: AnyObject {
     func success()
     func error()
 }
 
-class Reserve2ViewModel: NSObject {
+class Reserve2VModel: NSObject {
     
     var dataAtual: Date = Date()
     
-    private weak var delegate: Reserve2ViewModelProtocol?
+    private weak var delegate: Reserve2ModelProtocol?
     
-    public func delegate(delegate: Reserve2ViewModelProtocol?) {
+    public func delegate(delegate: Reserve2ModelProtocol?) {
         self.delegate = delegate
     }
     
@@ -31,7 +31,7 @@ class Reserve2ViewModel: NSObject {
         let  selecDate = dateFormatter.string(from: date)
         print(reservationID)
         let db = Firestore.firestore()
-        db.collection("reservations/1/\(selecDate)").document(reservationID).delete { error in
+        db.collection("reservations/2/\(selecDate)").document(reservationID).delete { error in
             if let error = error {
                 print("Não foi possível excluir a reserva:", error)
                 completion(.failure(error))
@@ -56,7 +56,7 @@ class Reserve2ViewModel: NSObject {
         let  dateSelect = dataAtual.getDateString(format: "yyyy-MM-dd")
         
         let db = Firestore.firestore()
-        db.collection("reservations/1/\(dateSelect)").getDocuments(completion: { [weak self] snapshot, error in
+        db.collection("reservations/2/\(dateSelect)").getDocuments(completion: { [weak self] snapshot, error in
             
             guard let self, let snapshot else {
                 print("Não foi possível buscar as informações", error?.localizedDescription ?? "...deu ruim")

@@ -36,7 +36,7 @@ class Reserve2Screen: UIView {
         tv.showsVerticalScrollIndicator = false
         tv.backgroundColor = .lightGray
         tv.layer.cornerRadius = 12
-        //tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
+        tv.register(TableViewCell2.self, forCellReuseIdentifier: TableViewCell2.identifier)
         
         return tv
     }()

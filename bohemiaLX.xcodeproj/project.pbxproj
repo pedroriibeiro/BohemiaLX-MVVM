@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04650B45AA0739F4C427B14C /* Pods_bohemiaLX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FA5F08B5B4DD259E70DD11 /* Pods_bohemiaLX.framework */; };
 		8510E6BE2BE12EDE00FCE404 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */; };
+		8513E2772BFFE82C00965699 /* TableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8513E2762BFFE82C00965699 /* TableViewCell2.swift */; };
 		851678E32BBB2CAB004BE371 /* TableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */; };
 		851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E62BBB2D20004BE371 /* TableViewCell.swift */; };
 		851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */; };
@@ -39,7 +40,7 @@
 		85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EA2BFF75CE00617A12 /* SelecModel.swift */; };
 		85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463ED2BFF76C600617A12 /* Reserve2VC.swift */; };
 		85C463F02BFF76E500617A12 /* Reserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */; };
-		85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463F12BFF770400617A12 /* Reserve2Model.swift */; };
+		85C463F22BFF770400617A12 /* Reserve2ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */; };
 		85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */; };
 		85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */; };
 		85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		52FA5F08B5B4DD259E70DD11 /* Pods_bohemiaLX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bohemiaLX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		8513E2762BFFE82C00965699 /* TableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell2.swift; sourceTree = "<group>"; };
 		851678E22BBB2CAB004BE371 /* TableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellScreen.swift; sourceTree = "<group>"; };
 		851678E62BBB2D20004BE371 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveScreen.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		85C463EA2BFF75CE00617A12 /* SelecModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecModel.swift; sourceTree = "<group>"; };
 		85C463ED2BFF76C600617A12 /* Reserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2VC.swift; sourceTree = "<group>"; };
 		85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Screen.swift; sourceTree = "<group>"; };
-		85C463F12BFF770400617A12 /* Reserve2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Model.swift; sourceTree = "<group>"; };
+		85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2ModelProtocol.swift; sourceTree = "<group>"; };
 		85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2VC.swift; sourceTree = "<group>"; };
 		85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2ViewModel.swift; sourceTree = "<group>"; };
 		85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2Screen.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 				8510E6BD2BE12EDE00FCE404 /* Date+extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8513E2752BFFE7FC00965699 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				8513E2762BFFE82C00965699 /* TableViewCell2.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		851678DA2BBB295E004BE371 /* Cell */ = {
@@ -218,6 +228,7 @@
 		851678F22BBC714A004BE371 /* CreatReserve */ = {
 			isa = PBXGroup;
 			children = (
+				85AF621E2BC1A85D00564241 /* Reservation.swift */,
 				8558D8B72BBEF6FF0014496F /* Model */,
 				8558D8B62BBEF6F00014496F /* Screen */,
 				8558D8B52BBEF6D90014496F /* ViewController */,
@@ -305,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				859012192BC03BD30046283C /* CreateReserveViewModel.swift */,
-				85AF621E2BC1A85D00564241 /* Reservation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +403,7 @@
 		85C463EC2BFF76A200617A12 /* Reserve2 */ = {
 			isa = PBXGroup;
 			children = (
+				8513E2752BFFE7FC00965699 /* TableView */,
 				85C463F52BFF771E00617A12 /* Controller */,
 				85C463F42BFF771500617A12 /* Screen */,
 				85C463F32BFF770900617A12 /* Model */,
@@ -403,7 +414,7 @@
 		85C463F32BFF770900617A12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				85C463F12BFF770400617A12 /* Reserve2Model.swift */,
+				85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -580,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */,
+				8513E2772BFFE82C00965699 /* TableViewCell2.swift in Sources */,
 				85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */,
 				85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */,
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
@@ -595,7 +607,7 @@
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
 				85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
-				85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */,
+				85C463F22BFF770400617A12 /* Reserve2ModelProtocol.swift in Sources */,
 				8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */,
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
 				851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */,
