@@ -58,7 +58,7 @@ class Reserve2Screen: UIView {
     @objc func tappedPlusButton(_ sender: UIButton) {
         print("ok")
         delegate?.customNavigation()
-        
+    
     }
     
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {

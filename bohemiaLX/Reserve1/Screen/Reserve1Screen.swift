@@ -61,6 +61,32 @@ class Reserve1Screen: UIView {
         
     }
     
+    lazy var selecDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.datePickerMode = .date
+        datePicker.locale = .current
+        datePicker.backgroundColor = .white.withAlphaComponent(0.5)
+        datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.minimumDate = Date()
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        datePicker.layer.cornerRadius = 12
+        // CRIAR BOTAO PARA APARECER E SUMIR O DATEPICKER
+        datePicker.isHidden = true
+        return datePicker
+    }()
+    
+    @objc func dateChanged(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        selecDate = dateFormatter.string(from: sender.date)
+//        print("Data: \(selecDate ?? "")")
+        //delegate.self
+    }
+    
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
@@ -85,6 +111,7 @@ class Reserve1Screen: UIView {
         addSubview(labelData)
         addSubview(tableView)
         addSubview(plusButton)
+        addSubview(selecDatePicker)
     }
     
     private func configConstraints() {
@@ -100,6 +127,10 @@ class Reserve1Screen: UIView {
             
             plusButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            selecDatePicker.topAnchor.constraint(equalTo: plusButton.topAnchor, constant: 10),
+            selecDatePicker.trailingAnchor.constraint(equalTo: plusButton.trailingAnchor, constant: -60),
+            selecDatePicker.widthAnchor.constraint(equalToConstant: 100)
         
         ])
     }

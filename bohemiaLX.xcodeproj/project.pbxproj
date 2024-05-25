@@ -40,7 +40,7 @@
 		85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EA2BFF75CE00617A12 /* SelecModel.swift */; };
 		85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463ED2BFF76C600617A12 /* Reserve2VC.swift */; };
 		85C463F02BFF76E500617A12 /* Reserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */; };
-		85C463F22BFF770400617A12 /* Reserve2ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */; };
+		85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463F12BFF770400617A12 /* Reserve2Model.swift */; };
 		85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */; };
 		85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */; };
 		85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */; };
@@ -80,7 +80,7 @@
 		85C463EA2BFF75CE00617A12 /* SelecModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecModel.swift; sourceTree = "<group>"; };
 		85C463ED2BFF76C600617A12 /* Reserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2VC.swift; sourceTree = "<group>"; };
 		85C463EF2BFF76E500617A12 /* Reserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Screen.swift; sourceTree = "<group>"; };
-		85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2ModelProtocol.swift; sourceTree = "<group>"; };
+		85C463F12BFF770400617A12 /* Reserve2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve2Model.swift; sourceTree = "<group>"; };
 		85C463FA2BFF830D00617A12 /* CreateReserve2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2VC.swift; sourceTree = "<group>"; };
 		85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2ViewModel.swift; sourceTree = "<group>"; };
 		85C464002BFF83F800617A12 /* CreateReserve2Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserve2Screen.swift; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 		85C463F32BFF770900617A12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				85C463F12BFF770400617A12 /* Reserve2ModelProtocol.swift */,
+				85C463F12BFF770400617A12 /* Reserve2Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,7 +607,7 @@
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
 				85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
-				85C463F22BFF770400617A12 /* Reserve2ModelProtocol.swift in Sources */,
+				85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */,
 				8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */,
 				858FD1E32BB05D3700698EA7 /* SelectVC.swift in Sources */,
 				851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */,
