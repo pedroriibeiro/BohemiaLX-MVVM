@@ -9,6 +9,7 @@ import UIKit
 
 protocol Reserve1ScreenProtocol: AnyObject {
     func customNavigation()
+    func customPicker(selectDate: String)
 }
 
 class Reserve1Screen: UIView {
@@ -17,6 +18,8 @@ class Reserve1Screen: UIView {
     
     public func delegate(delegate: Reserve1ScreenProtocol?) {
         self.delegate = delegate
+        
+        let reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
     }
     
     lazy var labelData: UILabel = {
@@ -27,6 +30,7 @@ class Reserve1Screen: UIView {
         lb.numberOfLines = 0
         lb.font = .boldSystemFont(ofSize: 18)
         lb.textColor = .lightGray
+        lb.isHidden = true
         return lb
     }()
     
@@ -66,11 +70,13 @@ class Reserve1Screen: UIView {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.datePickerMode = .date
         datePicker.locale = .current
-        datePicker.backgroundColor = .white.withAlphaComponent(0.5)
-        datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+        datePicker.backgroundColor = .white
+        datePicker.tintColor = .systemBlue
+       // datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         datePicker.preferredDatePickerStyle = .compact
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        datePicker.layer.masksToBounds = true
         datePicker.layer.cornerRadius = 12
         // CRIAR BOTAO PARA APARECER E SUMIR O DATEPICKER
         datePicker.isHidden = true
@@ -82,9 +88,33 @@ class Reserve1Screen: UIView {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        let selectedDate = dateFormatter.string(from: sender.date)
+            delegate?.customPicker(selectDate: selectedDate)
+        
+        
 //        selecDate = dateFormatter.string(from: sender.date)
 //        print("Data: \(selecDate ?? "")")
         //delegate.self
+    }
+    
+    lazy var selecButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Datas", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.textColor = .black
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.textAlignment = .right
+        button.backgroundColor = .none
+        button.addTarget(self, action: #selector(tappedSelectButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedSelectButton(_ sender: UIButton) {
+        print("ok")
+        selecDatePicker.isHidden.toggle()
+    
     }
     
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
@@ -112,6 +142,7 @@ class Reserve1Screen: UIView {
         addSubview(tableView)
         addSubview(plusButton)
         addSubview(selecDatePicker)
+        addSubview(selecButton)
     }
     
     private func configConstraints() {
@@ -128,9 +159,12 @@ class Reserve1Screen: UIView {
             plusButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            selecDatePicker.topAnchor.constraint(equalTo: plusButton.topAnchor, constant: 10),
-            selecDatePicker.trailingAnchor.constraint(equalTo: plusButton.trailingAnchor, constant: -60),
-            selecDatePicker.widthAnchor.constraint(equalToConstant: 100)
+            selecDatePicker.topAnchor.constraint(equalTo: plusButton.topAnchor, constant: 15),
+            selecDatePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+            selecDatePicker.widthAnchor.constraint(equalToConstant: 100),
+            
+            selecButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 35),
+            selecButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
         
         ])
     }

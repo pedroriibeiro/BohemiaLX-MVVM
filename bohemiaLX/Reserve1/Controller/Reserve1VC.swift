@@ -109,16 +109,25 @@ extension Reserve1VC: UITableViewDelegate, UITableViewDataSource {
 
 extension Reserve1VC: Reserve1ScreenProtocol {
     func customNavigation() {
-        let vc3: CreateReserveVC = CreateReserveVC()
+        let vc3 = CreateReserveVC()
         vc3.delegate(delegate: self)
         let nav = UINavigationController(rootViewController: vc3)
         present(nav, animated: true)
     }
-}
-
-extension Reserve1VC: CreateReserveVCProtocol {
-    func refreshRequest() {
+    
+    func customPicker(selectDate: String) {
+        // Você pode atualizar a data aqui, se necessário
+        // Exemplo: reserve1ViewModel.dataAtual = selectedDate
+        
+        // Em seguida, recarregue os dados da tabela
         fetchRequest()
+        reserve1Screen?.tableView.reloadData()
     }
 }
-
+    
+    extension Reserve1VC: CreateReserveVCProtocol {
+        func refreshRequest() {
+            fetchRequest()
+        }
+    }
+    
