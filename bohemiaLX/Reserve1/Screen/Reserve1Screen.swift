@@ -10,9 +10,15 @@ import UIKit
 protocol Reserve1ScreenProtocol: AnyObject {
     func customNavigation()
     func customPicker(selectDate: String)
+    func customPickerDate(date: Date) // Novo método
 }
 
+
 class Reserve1Screen: UIView {
+    
+    var selecDate: String?
+    var texto: String?
+    var numero: Int?
     
     private weak var delegate: Reserve1ScreenProtocol?
     
@@ -72,7 +78,7 @@ class Reserve1Screen: UIView {
         datePicker.locale = .current
         datePicker.backgroundColor = .white
         datePicker.tintColor = .systemBlue
-       // datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+        // datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         datePicker.preferredDatePickerStyle = .compact
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -89,13 +95,12 @@ class Reserve1Screen: UIView {
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let selectedDate = dateFormatter.string(from: sender.date)
-            delegate?.customPicker(selectDate: selectedDate)
-        
-        
-//        selecDate = dateFormatter.string(from: sender.date)
-//        print("Data: \(selecDate ?? "")")
-        //delegate.self
+        selecDate = dateFormatter.string(from: sender.date)
+        print("Data: \(selecDate ?? "")")
+        delegate?.customPicker(selectDate: selectedDate)
+        delegate?.customPickerDate(date: sender.date) // Adicione este método ao protocolo
     }
+
     
     lazy var selecButton: UIButton = {
         let button: UIButton = UIButton()
@@ -114,7 +119,7 @@ class Reserve1Screen: UIView {
     @objc func tappedSelectButton(_ sender: UIButton) {
         print("ok")
         selecDatePicker.isHidden.toggle()
-    
+        
     }
     
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
@@ -134,7 +139,7 @@ class Reserve1Screen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-       
+        
     }
     
     private func addElements() {
@@ -165,7 +170,7 @@ class Reserve1Screen: UIView {
             
             selecButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 35),
             selecButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-        
+            
         ])
     }
 }

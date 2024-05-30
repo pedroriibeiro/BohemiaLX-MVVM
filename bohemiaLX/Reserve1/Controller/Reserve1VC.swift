@@ -116,18 +116,23 @@ extension Reserve1VC: Reserve1ScreenProtocol {
     }
     
     func customPicker(selectDate: String) {
-        // Você pode atualizar a data aqui, se necessário
-        // Exemplo: reserve1ViewModel.dataAtual = selectedDate
-        
-        // Em seguida, recarregue os dados da tabela
-        fetchRequest()
-        reserve1Screen?.tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            reserve1Screen?.configDateLabel(data: reserve1ViewModel.getCurrentDate())
+            reserve1ViewModel.getReserve()
+            reserve1Screen?.tableView.reloadData()
+        }
+    }
+    
+    func customPickerDate(date: Date) {
+        reserve1ViewModel.updateDate(date)
     }
 }
     
     extension Reserve1VC: CreateReserveVCProtocol {
         func refreshRequest() {
             fetchRequest()
+            reserve1Screen?.tableView.reloadData()
         }
     }
     

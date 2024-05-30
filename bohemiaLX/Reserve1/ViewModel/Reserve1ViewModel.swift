@@ -23,6 +23,11 @@ class Reserve1ViewModel: NSObject {
         self.delegate = delegate
     }
     
+    func updateDate(_ date: Date) {
+        self.dataAtual = date
+        getReserve()
+    }
+    
     func deleteReservation(reservationID: String, date: Date, completion: @escaping(Result<Void, Error>) -> Void) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
