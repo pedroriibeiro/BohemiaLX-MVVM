@@ -86,7 +86,7 @@ class CreateReserveScreen: UIView {
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = .current
         datePicker.backgroundColor = .white
-        datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+        datePicker.tintColor = .systemBlue
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)

@@ -119,8 +119,22 @@ class Reserve1Screen: UIView {
     @objc func tappedSelectButton(_ sender: UIButton) {
         print("ok")
         selecDatePicker.isHidden.toggle()
-        
     }
+    
+    lazy var emptyAlertLabel: UILabel = {
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.backgroundColor = .white
+        lb.text = "Ainda não há reservas para o dia selecionado"
+        lb.textAlignment = .center
+        lb.numberOfLines = 0
+        lb.font = .boldSystemFont(ofSize: 18)
+        lb.textColor = .systemBlue
+        lb.layer.masksToBounds = true
+        lb.layer.cornerRadius = 12
+        lb.isHidden = true
+        return lb
+    }()
     
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate = delegate
@@ -148,6 +162,7 @@ class Reserve1Screen: UIView {
         addSubview(plusButton)
         addSubview(selecDatePicker)
         addSubview(selecButton)
+        addSubview(emptyAlertLabel)
     }
     
     private func configConstraints() {
@@ -171,6 +186,12 @@ class Reserve1Screen: UIView {
             selecButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 35),
             selecButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
+            emptyAlertLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyAlertLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            emptyAlertLabel.widthAnchor.constraint(equalToConstant: 300),
+            emptyAlertLabel.heightAnchor.constraint(equalToConstant: 60),
+            
         ])
     }
 }
+//

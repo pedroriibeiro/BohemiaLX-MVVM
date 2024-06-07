@@ -30,6 +30,12 @@ class Reserve1VC: UIViewController {
     
     func fetchRequest() {
         reserve1ViewModel.getReserve()
+        TableViewVisibility()
+    }
+    
+    private func TableViewVisibility() {
+        reserve1Screen?.tableView.isHidden = reserve1ViewModel.numberOfItems == 0
+        reserve1Screen?.emptyAlertLabel.isHidden = reserve1ViewModel.numberOfItems != 0
     }
     
 }
@@ -40,6 +46,7 @@ extension Reserve1VC: Reserve1ViewModelProtocol {
             guard let self else { return }
             reserve1Screen?.configDateLabel(data: reserve1ViewModel.getCurrentDate())
             reserve1Screen?.tableView.reloadData()
+            TableViewVisibility()
         }
     }
     
