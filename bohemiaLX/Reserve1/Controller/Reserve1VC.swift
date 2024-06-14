@@ -12,6 +12,7 @@ class Reserve1VC: UIViewController {
     
     var reserve1Screen: Reserve1Screen?
     var reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
+    // PODE SER AQUI
     var createReserveViewModel = CreateReserveViewModel()
     
     override func loadView() {

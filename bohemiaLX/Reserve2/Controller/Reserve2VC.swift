@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Reserve2VC: UIViewController {
     
@@ -28,6 +29,12 @@ class Reserve2VC: UIViewController {
     
     func fetchRequest() {
         reserve2Model.getReserve()
+        TableViewVisibility()
+    }
+    
+    private func TableViewVisibility() {
+        reserve2Screen?.tableView.isHidden = reserve2Model.numberOfItems == 0
+        reserve2Screen?.emptyAlertLabel.isHidden = reserve2Model.numberOfItems != 0
     }
     
     
@@ -39,6 +46,7 @@ extension Reserve2VC: Reserve2ModelProtocol {
             guard let self else { return }
             reserve2Screen?.configDateLabel(data: reserve2Model.getCurrentDate())
             reserve2Screen?.tableView.reloadData()
+            TableViewVisibility()
         }
     }
     
@@ -106,6 +114,19 @@ extension Reserve2VC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension Reserve2VC: Reserve2ScreenProtocol {
+    func customPicker(selectDate: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            reserve2Screen?.configDateLabel(data: reserve2Model.getCurrentDate())
+            reserve2Model.getReserve()
+            reserve2Screen?.tableView.reloadData()
+        }
+    }
+    
+    func customPickerDate(date: Date) {
+        reserve2Model.updateDate(date)
+    }
+    
     func customNavigation() {
         let vc: CreateReserve2VC = CreateReserve2VC()
         navigationController?.pushViewController(vc, animated: true)
@@ -117,6 +138,7 @@ extension Reserve2VC: Reserve2ScreenProtocol {
 extension Reserve2VC: CreateReserve2VCProtocol {
     func refreshRequest() {
         fetchRequest()
+        reserve2Screen?.tableView.reloadData()
     }
     
    

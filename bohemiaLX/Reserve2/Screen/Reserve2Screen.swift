@@ -7,11 +7,18 @@
 
 import UIKit
 
+
 protocol Reserve2ScreenProtocol: AnyObject {
     func customNavigation()
+    func customPicker(selectDate: String)
+    func customPickerDate(date: Date)
 }
 
 class Reserve2Screen: UIView {
+    
+    var selecDate: String?
+    var texto: String?
+    var numero: Int?
     
     private weak var delegate: Reserve2ScreenProtocol?
     
@@ -27,6 +34,7 @@ class Reserve2Screen: UIView {
         lb.numberOfLines = 0
         lb.font = .boldSystemFont(ofSize: 18)
         lb.textColor = .lightGray
+        lb.isHidden = true
         return lb
     }()
     
@@ -61,6 +69,70 @@ class Reserve2Screen: UIView {
     
     }
     
+    lazy var selecDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.datePickerMode = .date
+        datePicker.locale = .current
+        datePicker.backgroundColor = .white
+        datePicker.tintColor = .systemBlue
+        // datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.minimumDate = Date()
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        datePicker.layer.masksToBounds = true
+        datePicker.layer.cornerRadius = 12
+        // CRIAR BOTAO PARA APARECER E SUMIR O DATEPICKER
+        datePicker.isHidden = true
+        return datePicker
+    }()
+    
+    @objc func dateChanged(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let selectedDate = dateFormatter.string(from: sender.date)
+        selecDate = dateFormatter.string(from: sender.date)
+        print("Data: \(selecDate ?? "")")
+        delegate?.customPicker(selectDate: selectedDate)
+        delegate?.customPickerDate(date: sender.date) // Adicione este método ao protocolo
+    }
+    
+    lazy var selecButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Datas", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.textColor = .black
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.textAlignment = .right
+        button.backgroundColor = .none
+        button.addTarget(self, action: #selector(tappedSelectButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedSelectButton(_ sender: UIButton) {
+        print("ok")
+        selecDatePicker.isHidden.toggle()
+    }
+    
+    lazy var emptyAlertLabel: UILabel = {
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.backgroundColor = .white
+        lb.text = "Ainda não há reservas para o dia selecionado"
+        lb.textAlignment = .center
+        lb.numberOfLines = 0
+        lb.font = .boldSystemFont(ofSize: 18)
+        lb.textColor = .systemBlue
+        lb.layer.masksToBounds = true
+        lb.layer.cornerRadius = 12
+        lb.isHidden = true
+        return lb
+    }()
+    
     public func configProtocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
@@ -85,6 +157,9 @@ class Reserve2Screen: UIView {
         addSubview(labelData)
         addSubview(tableView)
         addSubview(plusButton)
+        addSubview(selecDatePicker)
+        addSubview(selecButton)
+        addSubview(emptyAlertLabel)
     }
     
     private func configConstraints() {
@@ -100,6 +175,18 @@ class Reserve2Screen: UIView {
             
             plusButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             plusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            selecDatePicker.topAnchor.constraint(equalTo: plusButton.topAnchor, constant: 15),
+            selecDatePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+            selecDatePicker.widthAnchor.constraint(equalToConstant: 100),
+            
+            selecButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 35),
+            selecButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            emptyAlertLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyAlertLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            emptyAlertLabel.widthAnchor.constraint(equalToConstant: 300),
+            emptyAlertLabel.heightAnchor.constraint(equalToConstant: 60),
         
         ])
     }
