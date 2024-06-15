@@ -54,6 +54,8 @@ class CreateReserve2VC: UIViewController {
 extension CreateReserve2VC: CreateReserve2ScreenProtocol {
     func didEnterData(data: Reservation) {
         
+        
+        
         createReserve2ViewModel?.addReservation(reservation: data, completion: { [weak self] result in
           guard let self else { return }
           switch result {
@@ -64,8 +66,8 @@ extension CreateReserve2VC: CreateReserve2ScreenProtocol {
             print("deu ruim chara!!")
           }
         })
-        
     }
+    
     }
     
 extension CreateReserve2VC: UITextFieldDelegate {

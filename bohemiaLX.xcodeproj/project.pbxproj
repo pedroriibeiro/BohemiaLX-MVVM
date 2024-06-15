@@ -14,6 +14,8 @@
 		851678E72BBB2D20004BE371 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678E62BBB2D20004BE371 /* TableViewCell.swift */; };
 		851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */; };
 		851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F72BBC7582004BE371 /* CreateReserveVC.swift */; };
+		854919602C1DA9A10017DADE /* PinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8549195F2C1DA9A10017DADE /* PinVC.swift */; };
+		854919632C1DAAA20017DADE /* PinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854919622C1DAAA20017DADE /* PinScreen.swift */; };
 		8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB6E2BA4655C006CC784 /* RegisterVC.swift */; };
 		8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB722BA465AE006CC784 /* RegisterScreen.swift */; };
 		8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4BC2B93471A00913807 /* AppDelegate.swift */; };
@@ -55,6 +57,8 @@
 		851678E62BBB2D20004BE371 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		851678F52BBC71B1004BE371 /* CreateReserveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveScreen.swift; sourceTree = "<group>"; };
 		851678F72BBC7582004BE371 /* CreateReserveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveVC.swift; sourceTree = "<group>"; };
+		8549195F2C1DA9A10017DADE /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
+		854919622C1DAAA20017DADE /* PinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScreen.swift; sourceTree = "<group>"; };
 		8557AB6E2BA4655C006CC784 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8557AB722BA465AE006CC784 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		8558D4B92B93471A00913807 /* bohemiaLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bohemiaLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +240,15 @@
 			path = CreatReserve;
 			sourceTree = "<group>";
 		};
+		8549195E2C1DA9750017DADE /* PinValidation */ = {
+			isa = PBXGroup;
+			children = (
+				8549195F2C1DA9A10017DADE /* PinVC.swift */,
+				854919622C1DAAA20017DADE /* PinScreen.swift */,
+			);
+			path = PinValidation;
+			sourceTree = "<group>";
+		};
 		8557AB6C2BA4651B006CC784 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +290,7 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				8549195E2C1DA9750017DADE /* PinValidation */,
 				85C463F62BFF82B100617A12 /* CreateReserve2 */,
 				85C463EC2BFF76A200617A12 /* Reserve2 */,
 				8510E6BC2BE12EB500FCE404 /* Utils */,
@@ -590,12 +604,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854919632C1DAAA20017DADE /* PinScreen.swift in Sources */,
 				85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */,
 				8513E2772BFFE82C00965699 /* TableViewCell2.swift in Sources */,
 				85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */,
 				85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */,
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
 				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
+				854919602C1DA9A10017DADE /* PinVC.swift in Sources */,
 				85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */,
 				85AF621F2BC1A85D00564241 /* Reservation.swift in Sources */,
 				8572D7BC2BD7D1C9002BDCCB /* Reserve1ViewModel.swift in Sources */,
