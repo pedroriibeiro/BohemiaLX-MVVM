@@ -3,7 +3,7 @@ import UIKit
 class RegisterVC: UIViewController {
     
     var registerScreen: RegisterScreen?
-    private var viewModel: HomeViewModel = HomeViewModel()
+    private var viewModel: RegisterModel = RegisterModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

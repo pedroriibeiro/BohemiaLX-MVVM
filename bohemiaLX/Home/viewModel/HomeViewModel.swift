@@ -22,15 +22,5 @@ class HomeViewModel {
         }
     }
     
-    public func registerUser(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { authResult, error in
-            if error == nil {
-                print("sucess register")
-            } else {
-                print("Error register: \(error?.localizedDescription ?? "")")
-            }
-        }
-    }
-    
     
 }
