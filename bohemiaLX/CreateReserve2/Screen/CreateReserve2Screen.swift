@@ -127,6 +127,13 @@ class CreateReserve2Screen: UIView {
         
     }
     
+    public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+        nameTextField.delegate = delegate
+        contactoTextField.delegate = delegate
+        quantidadeTextField.delegate = delegate
+        
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -178,11 +185,5 @@ class CreateReserve2Screen: UIView {
         ])
     }
     
-    public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
-        nameTextField.delegate = delegate
-        contactoTextField.delegate = delegate
-        quantidadeTextField.delegate = delegate
-        
-    }
     
 }

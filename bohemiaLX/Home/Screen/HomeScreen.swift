@@ -64,10 +64,10 @@ class HomeScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Entrar", for: .normal)
-        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.titleLabel?.textAlignment = .right
-        button.backgroundColor = .lightGray
+        button.backgroundColor = .white
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)

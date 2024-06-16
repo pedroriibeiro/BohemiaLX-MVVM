@@ -17,6 +17,10 @@ class Reserve2VC: UIViewController {
         reserve2Screen = Reserve2Screen()
         view = reserve2Screen
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchRequest()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +28,7 @@ class Reserve2VC: UIViewController {
         reserve2Screen?.configProtocolsTableView(delegate: self, dataSource: self)
         reserve2Screen?.delegate(delegate: self)
         reserve2Model.delegate(delegate: self)
-        fetchRequest()
+        
     }
     
     func fetchRequest() {

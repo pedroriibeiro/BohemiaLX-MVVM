@@ -1,10 +1,3 @@
-//
-//  RegisterScreen.swift
-//  bohemiaLX
-//
-//  Created by Pedro Ribeiro on 15/03/2024.
-//
-
 import UIKit
 
 protocol RegisterScreenProtocol: AnyObject {
@@ -76,18 +69,24 @@ class RegisterScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Confirmar dados", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.titleLabel?.textAlignment = .right
-        button.backgroundColor = .none
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
         print("ok")
         delegate?.customBody()
-
+    }
+    
+    func delegate(delegate: UITextFieldDelegate) {
+        emailTextField.delegate = delegate
+        passwordTextField.delegate = delegate
     }
     
     private func addElements() {
@@ -126,11 +125,11 @@ class RegisterScreen: UIView {
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40),
+            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 60),
             registerButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            registerButton.widthAnchor.constraint(equalToConstant: 200),
                                                     
         ])
     }
 }
-
 

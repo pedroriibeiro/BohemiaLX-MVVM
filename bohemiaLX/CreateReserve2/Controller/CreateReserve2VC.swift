@@ -53,14 +53,15 @@ class CreateReserve2VC: UIViewController {
 
 extension CreateReserve2VC: CreateReserve2ScreenProtocol {
     func didEnterData(data: Reservation) {
-        
-        
-        
         createReserve2ViewModel?.addReservation(reservation: data, completion: { [weak self] result in
           guard let self else { return }
           switch result {
           case .success(let success):
-            dismiss(animated: true)
+            if let navigationController = self.navigationController {
+                navigationController.popViewController(animated: true)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
             delegate?.refreshRequest()
           case .failure(let failure):
             print("deu ruim chara!!")

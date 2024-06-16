@@ -59,11 +59,13 @@ class PasswordScreen: UIView {
     lazy var forgotPasswordButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Enviar e-mail", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        button.setTitle("Confirmar", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         button.titleLabel?.textAlignment = .right
-        button.backgroundColor = .none
+        button.backgroundColor = .white
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -106,6 +108,7 @@ class PasswordScreen: UIView {
             
             forgotPasswordButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 60),
             forgotPasswordButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            forgotPasswordButton.widthAnchor.constraint(equalToConstant: 120),
             
         ])
     }

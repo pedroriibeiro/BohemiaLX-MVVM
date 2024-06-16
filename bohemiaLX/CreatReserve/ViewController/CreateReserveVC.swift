@@ -43,18 +43,14 @@ class CreateReserveVC: UIViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-           // Quando o usuário termina de editar o texto no campo de texto, você pode acessar o texto e convertê-lo para uma string
            if let text = textField.text {
                let stringFromTextField = String(text)
-               // Faça o que for necessário com a string aqui
                print((stringFromTextField))
            }
        }
 
     
 }
-
-// MARK: Confirmar amanhã se essa lógica faz sentido
 
 extension CreateReserveVC: CreateReserveScreenProtocol {
     func didEnterData(data: Reservation) {

@@ -55,8 +55,7 @@ class SelectScreen: UIView {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("⚪️  BohemiaLX - Sé", for: .normal)
-        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
-                             , for: .normal)
+        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.titleLabel?.textAlignment = .natural
         button.layer.cornerRadius = 12
@@ -68,6 +67,30 @@ class SelectScreen: UIView {
     @objc func tappedSeButton(_ sender: UIButton) {
         print("okay!")
         delegate?.customNavigation2()
+    }
+    
+    lazy var logoutButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Sair", for: .normal)
+        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
+                             , for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.textAlignment = .natural
+        button.layer.cornerRadius = 12
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
+        
+        let logoutImage = UIImage(systemName: "person.circle.fill")
+        button.setImage(logoutImage, for: .normal)
+        button.tintColor = .systemBlue
+        
+        return button
+    }()
+    
+    @objc func tappedLogoutButton(_ sender: UIButton) {
+        print("okay!")
+        //delegate?.customNavigation2()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,6 +106,7 @@ class SelectScreen: UIView {
         addSubview(LabelOne)
         addSubview(stAntonioButton)
         addSubview(seButton)
+        addSubview(logoutButton)
     }
     
     private func configConstraints() {
@@ -99,6 +123,10 @@ class SelectScreen: UIView {
             seButton.topAnchor.constraint(equalTo: stAntonioButton.bottomAnchor, constant: 40),
             seButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
             seButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            
+            logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            logoutButton.widthAnchor.constraint(equalToConstant: 60)
             
         ])
     }

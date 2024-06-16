@@ -16,6 +16,7 @@
 		851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851678F72BBC7582004BE371 /* CreateReserveVC.swift */; };
 		854919602C1DA9A10017DADE /* PinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8549195F2C1DA9A10017DADE /* PinVC.swift */; };
 		854919632C1DAAA20017DADE /* PinScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854919622C1DAAA20017DADE /* PinScreen.swift */; };
+		854919662C1E80DB0017DADE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854919652C1E80DB0017DADE /* TabBarVC.swift */; };
 		8557AB6F2BA4655C006CC784 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB6E2BA4655C006CC784 /* RegisterVC.swift */; };
 		8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8557AB722BA465AE006CC784 /* RegisterScreen.swift */; };
 		8558D4BD2B93471A00913807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558D4BC2B93471A00913807 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		851678F72BBC7582004BE371 /* CreateReserveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveVC.swift; sourceTree = "<group>"; };
 		8549195F2C1DA9A10017DADE /* PinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVC.swift; sourceTree = "<group>"; };
 		854919622C1DAAA20017DADE /* PinScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScreen.swift; sourceTree = "<group>"; };
+		854919652C1E80DB0017DADE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		8557AB6E2BA4655C006CC784 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		8557AB722BA465AE006CC784 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		8558D4B92B93471A00913807 /* bohemiaLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bohemiaLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +251,14 @@
 			path = PinValidation;
 			sourceTree = "<group>";
 		};
+		854919642C1E80890017DADE /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				854919652C1E80DB0017DADE /* TabBarVC.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		8557AB6C2BA4651B006CC784 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +300,7 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				854919642C1E80890017DADE /* TabBarController */,
 				8549195E2C1DA9750017DADE /* PinValidation */,
 				85C463F62BFF82B100617A12 /* CreateReserve2 */,
 				85C463EC2BFF76A200617A12 /* Reserve2 */,
@@ -618,6 +629,7 @@
 				85C463E82BFF75A300617A12 /* PasswordModel.swift in Sources */,
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
+				854919662C1E80DB0017DADE /* TabBarVC.swift in Sources */,
 				85C463E52BFF758600617A12 /* RegisterModel.swift in Sources */,
 				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
