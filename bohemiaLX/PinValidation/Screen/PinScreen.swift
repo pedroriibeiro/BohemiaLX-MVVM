@@ -51,6 +51,7 @@ class PinScreen: UIView {
     
     lazy var pinTextField: UITextField = {
         let tf = UITextField()
+        tf.autocapitalizationType = .none
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
