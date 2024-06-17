@@ -11,7 +11,7 @@ protocol HomeScreenProtocol: AnyObject {
     func CustomNavRegister()
     func customNavForgotPass()
     func customNavNext()
-    }
+}
 
 class HomeScreen: UIView {
     
@@ -31,6 +31,7 @@ class HomeScreen: UIView {
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tf.borderStyle = .roundedRect
@@ -47,6 +48,7 @@ class HomeScreen: UIView {
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tf.borderStyle = .roundedRect
@@ -93,8 +95,8 @@ class HomeScreen: UIView {
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
         delegate?.CustomNavRegister()
-            print("okay")
-        }
+        print("okay")
+    }
     
     
     lazy var forgotPassword: UIButton = {
@@ -140,7 +142,7 @@ class HomeScreen: UIView {
             subImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             subImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        
+            
             emailTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 136),
             emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
@@ -162,7 +164,7 @@ class HomeScreen: UIView {
             forgotPassword.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 100),
             forgotPassword.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             forgotPassword.widthAnchor.constraint(equalToConstant: 200),
-           
+            
         ])
     }
 }

@@ -8,17 +8,17 @@
 import UIKit
 
 protocol CreateReserveVCProtocol: AnyObject {
-  func refreshRequest()
+    func refreshRequest()
 }
 
 class CreateReserveVC: UIViewController {
     
     private weak var delegate: CreateReserveVCProtocol?
-
+    
     public func delegate(delegate: CreateReserveVCProtocol?) {
-      self.delegate = delegate
+        self.delegate = delegate
     }
-
+    
     var createReserveScreen: CreateReserveScreen?
     var createReserveViewModel: CreateReserveViewModel?
     
@@ -43,12 +43,12 @@ class CreateReserveVC: UIViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-           if let text = textField.text {
-               let stringFromTextField = String(text)
-               print((stringFromTextField))
-           }
-       }
-
+        if let text = textField.text {
+            let stringFromTextField = String(text)
+            print((stringFromTextField))
+        }
+    }
+    
     
 }
 
@@ -56,14 +56,14 @@ extension CreateReserveVC: CreateReserveScreenProtocol {
     func didEnterData(data: Reservation) {
         
         createReserveViewModel?.addReservation(reservation: data, completion: { [weak self] result in
-          guard let self else { return }
-          switch result {
-          case .success(let success):
-            dismiss(animated: true)
-            delegate?.refreshRequest()
-          case .failure(let failure):
-            print("deu ruim chara!!")
-          }
+            guard let self else { return }
+            switch result {
+            case .success(let success):
+                dismiss(animated: true)
+                delegate?.refreshRequest()
+            case .failure(let failure):
+                print("deu ruim chara!!")
+            }
         })
     }
     

@@ -84,7 +84,6 @@ class Reserve2VModel: NSObject {
                     contact: contato,
                     date: date?.dateValue() ?? Date())
             }
-            // AQUI CRIEI O COMPLETION QUE O POLI PEDIU
             if error != nil {
                 delegate?.error()
             } else {

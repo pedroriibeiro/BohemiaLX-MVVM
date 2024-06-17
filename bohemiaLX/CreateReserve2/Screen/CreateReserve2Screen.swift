@@ -35,6 +35,7 @@ class CreateReserve2Screen: UIView {
     lazy var nameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
@@ -51,6 +52,7 @@ class CreateReserve2Screen: UIView {
     lazy var quantidadeTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
@@ -67,6 +69,7 @@ class CreateReserve2Screen: UIView {
     lazy var contactoTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
@@ -100,7 +103,7 @@ class CreateReserve2Screen: UIView {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         selecDate = dateFormatter.string(from: sender.date)
         print("Data: \(selecDate ?? "")")
-        //delegate.self
+        
     }
     
     lazy var confirmButton: UIButton = {

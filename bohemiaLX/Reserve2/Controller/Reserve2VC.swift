@@ -21,7 +21,7 @@ class Reserve2VC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         fetchRequest()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
@@ -145,5 +145,5 @@ extension Reserve2VC: CreateReserve2VCProtocol {
         reserve2Screen?.tableView.reloadData()
     }
     
-   
+    
 }

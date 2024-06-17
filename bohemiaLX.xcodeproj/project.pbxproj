@@ -234,8 +234,8 @@
 		851678F22BBC714A004BE371 /* CreatReserve */ = {
 			isa = PBXGroup;
 			children = (
-				85AF621E2BC1A85D00564241 /* Reservation.swift */,
-				8558D8B72BBEF6FF0014496F /* Model */,
+				85B684AA2C205D26002416F9 /* Model */,
+				8558D8B72BBEF6FF0014496F /* ViewModel */,
 				8558D8B62BBEF6F00014496F /* Screen */,
 				8558D8B52BBEF6D90014496F /* ViewController */,
 			);
@@ -245,8 +245,9 @@
 		8549195E2C1DA9750017DADE /* PinValidation */ = {
 			isa = PBXGroup;
 			children = (
-				8549195F2C1DA9A10017DADE /* PinVC.swift */,
-				854919622C1DAAA20017DADE /* PinScreen.swift */,
+				85B684A92C205CFB002416F9 /* ViewModel */,
+				85B684A82C205CC4002416F9 /* Screen */,
+				85B684A72C205CB5002416F9 /* Controller */,
 			);
 			path = PinValidation;
 			sourceTree = "<group>";
@@ -254,7 +255,7 @@
 		854919642C1E80890017DADE /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				854919652C1E80DB0017DADE /* TabBarVC.swift */,
+				85B684A62C205CA7002416F9 /* Controller */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -264,7 +265,7 @@
 			children = (
 				851678E82BBB56F4004BE371 /* Controller */,
 				851678E92BBB5701004BE371 /* Screen */,
-				85EEDF2E2BB48B93009ABE7C /* viewModel */,
+				85EEDF2E2BB48B93009ABE7C /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -272,7 +273,7 @@
 		8557AB6D2BA4653C006CC784 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				85C463E32BFF756A00617A12 /* Model */,
+				85C463E32BFF756A00617A12 /* ViewModel */,
 				851678EA2BBB5721004BE371 /* Controller */,
 				851678EB2BBB572B004BE371 /* Screen */,
 			);
@@ -337,18 +338,18 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		8558D8B72BBEF6FF0014496F /* Model */ = {
+		8558D8B72BBEF6FF0014496F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				859012192BC03BD30046283C /* CreateReserveViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		856D5CA42BA7450300AF68F6 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				85C463E62BFF759300617A12 /* Model */,
+				85C463E62BFF759300617A12 /* ViewModel */,
 				851678ED2BBB5748004BE371 /* Screen */,
 				851678EC2BBB573E004BE371 /* Controller */,
 			);
@@ -366,7 +367,7 @@
 		858FD1E12BB05CF100698EA7 /* SelectHouse */ = {
 			isa = PBXGroup;
 			children = (
-				85C463E92BFF75BB00617A12 /* Model */,
+				85C463E92BFF75BB00617A12 /* ViewModel */,
 				851678EE2BBB5780004BE371 /* Controller */,
 				851678EF2BBB5797004BE371 /* Screen */,
 			);
@@ -401,28 +402,67 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		85C463E32BFF756A00617A12 /* Model */ = {
+		85B684A62C205CA7002416F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				854919652C1E80DB0017DADE /* TabBarVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		85B684A72C205CB5002416F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8549195F2C1DA9A10017DADE /* PinVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		85B684A82C205CC4002416F9 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				854919622C1DAAA20017DADE /* PinScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		85B684A92C205CFB002416F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		85B684AA2C205D26002416F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85AF621E2BC1A85D00564241 /* Reservation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85C463E32BFF756A00617A12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85C463E42BFF758600617A12 /* RegisterModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		85C463E62BFF759300617A12 /* Model */ = {
+		85C463E62BFF759300617A12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85C463E72BFF75A300617A12 /* PasswordModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		85C463E92BFF75BB00617A12 /* Model */ = {
+		85C463E92BFF75BB00617A12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85C463EA2BFF75CE00617A12 /* SelecModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		85C463EC2BFF76A200617A12 /* Reserve2 */ = {
@@ -431,17 +471,17 @@
 				8513E2752BFFE7FC00965699 /* TableView */,
 				85C463F52BFF771E00617A12 /* Controller */,
 				85C463F42BFF771500617A12 /* Screen */,
-				85C463F32BFF770900617A12 /* Model */,
+				85C463F32BFF770900617A12 /* ViewModel */,
 			);
 			path = Reserve2;
 			sourceTree = "<group>";
 		};
-		85C463F32BFF770900617A12 /* Model */ = {
+		85C463F32BFF770900617A12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85C463F12BFF770400617A12 /* Reserve2Model.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		85C463F42BFF771500617A12 /* Screen */ = {
@@ -465,17 +505,17 @@
 			children = (
 				85C463F92BFF82EE00617A12 /* Controller */,
 				85C463F82BFF82E600617A12 /* Screen */,
-				85C463F72BFF82D900617A12 /* Model */,
+				85C463F72BFF82D900617A12 /* ViewModel */,
 			);
 			path = CreateReserve2;
 			sourceTree = "<group>";
 		};
-		85C463F72BFF82D900617A12 /* Model */ = {
+		85C463F72BFF82D900617A12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85C463FE2BFF835C00617A12 /* CreateReserve2ViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		85C463F82BFF82E600617A12 /* Screen */ = {
@@ -494,12 +534,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		85EEDF2E2BB48B93009ABE7C /* viewModel */ = {
+		85EEDF2E2BB48B93009ABE7C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				85EEDF2F2BB48BBB009ABE7C /* HomeViewModel.swift */,
 			);
-			path = viewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DB624DA45805035077E4EEBE /* Frameworks */ = {

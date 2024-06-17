@@ -36,6 +36,7 @@ class RegisterScreen: UIView {
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tf.borderStyle = .roundedRect
@@ -52,6 +53,7 @@ class RegisterScreen: UIView {
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
         tf.borderStyle = .roundedRect

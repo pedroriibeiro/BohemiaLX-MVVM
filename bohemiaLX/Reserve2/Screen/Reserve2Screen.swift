@@ -66,7 +66,7 @@ class Reserve2Screen: UIView {
     @objc func tappedPlusButton(_ sender: UIButton) {
         print("ok")
         delegate?.customNavigation()
-    
+        
     }
     
     lazy var selecDatePicker: UIDatePicker = {
@@ -76,13 +76,11 @@ class Reserve2Screen: UIView {
         datePicker.locale = .current
         datePicker.backgroundColor = .white
         datePicker.tintColor = .systemBlue
-        // datePicker.tintColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         datePicker.preferredDatePickerStyle = .compact
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         datePicker.layer.masksToBounds = true
         datePicker.layer.cornerRadius = 12
-        // CRIAR BOTAO PARA APARECER E SUMIR O DATEPICKER
         datePicker.isHidden = true
         return datePicker
     }()
@@ -96,7 +94,7 @@ class Reserve2Screen: UIView {
         selecDate = dateFormatter.string(from: sender.date)
         print("Data: \(selecDate ?? "")")
         delegate?.customPicker(selectDate: selectedDate)
-        delegate?.customPickerDate(date: sender.date) // Adicione este método ao protocolo
+        delegate?.customPickerDate(date: sender.date)
     }
     
     lazy var selecButton: UIButton = {
@@ -150,7 +148,7 @@ class Reserve2Screen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-       
+        
     }
     
     private func addElements() {
@@ -187,7 +185,7 @@ class Reserve2Screen: UIView {
             emptyAlertLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             emptyAlertLabel.widthAnchor.constraint(equalToConstant: 300),
             emptyAlertLabel.heightAnchor.constraint(equalToConstant: 60),
-        
+            
         ])
     }
 }

@@ -24,8 +24,6 @@ class Reserve1Screen: UIView {
     
     public func delegate(delegate: Reserve1ScreenProtocol?) {
         self.delegate = delegate
-        
-        let reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
     }
     
     lazy var labelData: UILabel = {
@@ -100,7 +98,7 @@ class Reserve1Screen: UIView {
         delegate?.customPicker(selectDate: selectedDate)
         delegate?.customPickerDate(date: sender.date) // Adicione este método ao protocolo
     }
-
+    
     
     lazy var selecButton: UIButton = {
         let button: UIButton = UIButton()

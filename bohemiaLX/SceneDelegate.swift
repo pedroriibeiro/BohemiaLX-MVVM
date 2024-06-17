@@ -13,15 +13,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        FirebaseApp.configure()
-        let window = UIWindow(windowScene: windowScene)
-        let vc: HomeVC = HomeVC()
-        let nav = UINavigationController(rootViewController: vc)
-        window.rootViewController = nav
-        window.makeKeyAndVisible()
-        self.window = window
-    }
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            FirebaseApp.configure()
+            
+            let window = UIWindow(windowScene: windowScene)
+            let vc: UIViewController
+            
+            if isUserLoggedIn() {
+                vc = PinVC()
+            } else {
+                vc = HomeVC()
+            }
+            
+            let nav = UINavigationController(rootViewController: vc)
+            window.rootViewController = nav
+            window.makeKeyAndVisible()
+            self.window = window
+        }
+        
+        // Função para verificar se o usuário está logado
+        func isUserLoggedIn() -> Bool {
+            // Verifique se o token de autenticação está presente nos UserDefaults
+            if let _ = UserDefaults.standard.string(forKey: "authToken") {
+                return true
+            } else {
+                return false
+            }
+        }
     
     
     func sceneDidDisconnect(_ scene: UIScene) {

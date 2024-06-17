@@ -10,6 +10,7 @@ import UIKit
 protocol SelectScreenProtocol: AnyObject {
     func customNavigation()
     func customNavigation2()
+    func logout()
 }
 
 class SelectScreen: UIView {
@@ -90,7 +91,7 @@ class SelectScreen: UIView {
     
     @objc func tappedLogoutButton(_ sender: UIButton) {
         print("okay!")
-        //delegate?.customNavigation2()
+        delegate?.logout()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)

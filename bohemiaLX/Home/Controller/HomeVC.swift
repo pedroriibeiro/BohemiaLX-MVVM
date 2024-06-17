@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     private var homeScreen: HomeScreen?
     private var viewModel: HomeViewModel = HomeViewModel()
     
@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
         homeScreen = HomeScreen()
         view = homeScreen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
@@ -26,21 +26,21 @@ class HomeVC: UIViewController {
         let vc3: PinVC = PinVC()
         vc3.modalPresentationStyle = .currentContext
         // MARK: Altera o fluxo de navegação para a select ser a principal
-
+        
         let nav = UINavigationController(rootViewController: vc3)
         nav.modalPresentationStyle = .currentContext
         present(nav, animated: true)
     }
-
-        
-    }
+    
+    
+}
 extension HomeVC: HomeScreenProtocol {
     func customNavNext() {
         let email = homeScreen?.emailTextField.text ?? ""
         let senha = homeScreen?.passwordTextField.text ?? ""
         viewModel.logarUsuario(email: email, senha: senha, viewController: self)
     }
-
+    
     
     func customNavForgotPass() {
         let vc2: PasswordVC = PasswordVC()
@@ -50,7 +50,7 @@ extension HomeVC: HomeScreenProtocol {
     func CustomNavRegister() {
         let vc: RegisterVC = RegisterVC()
         navigationController?.pushViewController(vc, animated: true)
-     
+        
     }
     
 }

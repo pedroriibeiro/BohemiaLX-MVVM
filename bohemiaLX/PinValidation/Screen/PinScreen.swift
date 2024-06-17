@@ -18,7 +18,7 @@ class PinScreen: UIView {
     public func delegate(delegate: PinScreenProtocol?) {
         self.delegate = delegate
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
@@ -94,7 +94,7 @@ class PinScreen: UIView {
         addSubview(pinTextField)
         addSubview(nextButton)
     }
- 
+    
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
@@ -110,9 +110,9 @@ class PinScreen: UIView {
             
             nextButton.topAnchor.constraint(equalTo: pinTextField.bottomAnchor, constant: 80),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
-        
-        
-        
+            
+            
+            
         ])
     }
     

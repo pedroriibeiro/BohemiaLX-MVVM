@@ -17,7 +17,7 @@ class CreateReserve2VC: UIViewController {
     public func delegate(delegate: CreateReserve2VCProtocol?) {
         self.delegate = delegate
     }
-
+    
     var createReserve2Screen: CreateReserve2Screen?
     var createReserve2ViewModel: CreateReserve2ViewModel?
     
@@ -42,35 +42,35 @@ class CreateReserve2VC: UIViewController {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-           // Quando o usuário termina de editar o texto no campo de texto, você pode acessar o texto e convertê-lo para uma string
-           if let text = textField.text {
-               let stringFromTextField = String(text)
-               // Faça o que for necessário com a string aqui
-               print((stringFromTextField))
-           }
-       }
+        
+        if let text = textField.text {
+            let stringFromTextField = String(text)
+            
+            print((stringFromTextField))
+        }
+    }
 }
 
 extension CreateReserve2VC: CreateReserve2ScreenProtocol {
     func didEnterData(data: Reservation) {
         createReserve2ViewModel?.addReservation(reservation: data, completion: { [weak self] result in
-          guard let self else { return }
-          switch result {
-          case .success(let success):
-            if let navigationController = self.navigationController {
-                navigationController.popViewController(animated: true)
-            } else {
-                dismiss(animated: true, completion: nil)
+            guard let self else { return }
+            switch result {
+            case .success(let success):
+                if let navigationController = self.navigationController {
+                    navigationController.popViewController(animated: true)
+                } else {
+                    dismiss(animated: true, completion: nil)
+                }
+                delegate?.refreshRequest()
+            case .failure(let failure):
+                print("deu ruim chara!!")
             }
-            delegate?.refreshRequest()
-          case .failure(let failure):
-            print("deu ruim chara!!")
-          }
         })
     }
     
-    }
-    
+}
+
 extension CreateReserve2VC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -87,5 +87,5 @@ extension CreateReserve2VC: UITextFieldDelegate {
         return false
     }
 }
-    
+
 

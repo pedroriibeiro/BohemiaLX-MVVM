@@ -17,7 +17,7 @@ class HomeViewModel {
             } else {
                 print("Sucesso! O usuário está logado")
                 
-                // Verifica se há um token de usuário no resultado de autenticação
+                
                 if let user = authResult?.user {
                     user.getIDTokenResult(completion: { (tokenResult, error) in
                         guard let token = tokenResult?.token else {
@@ -25,11 +25,10 @@ class HomeViewModel {
                             return
                         }
                         
-                        // Salva o token de autenticação nos UserDefaults
                         UserDefaults.standard.set(token, forKey: "authToken")
                         UserDefaults.standard.set(true, forKey: "UsuarioLogado")
                         
-                        // Informa ao HomeVC que o login foi bem sucedido, se necessário
+                        
                         if let homeVC = viewController as? HomeVC {
                             homeVC.loginSuccessful()
                         }

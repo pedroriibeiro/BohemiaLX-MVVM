@@ -43,10 +43,3 @@ class CreateReserveViewModel {
 
 
 
-
-
-
-
-
-
-// MARK: Entender o que foi feito, e criar a função que vai popular o exemplo acima e fazer a conexão com o firebase.

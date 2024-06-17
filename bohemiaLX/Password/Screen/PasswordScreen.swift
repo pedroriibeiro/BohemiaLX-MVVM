@@ -1,21 +1,15 @@
-//
-//  PasswordScreen.swift
-//  bohemiaLX
-//
-//  Created by Pedro Ribeiro on 17/03/2024.
-//
 
 import UIKit
 
 protocol PasswordScreenProtocol: AnyObject {
-    func customNavigation2()
+    func tappedRegisterButton()
 }
 
 class PasswordScreen: UIView {
     
-    private weak var delegate: PasswordScreenProtocol?
+    weak var delegate: PasswordScreenProtocol?
     
-    public func delegate(delegate: PasswordScreenProtocol?) {
+    public func setDelegate(delegate: PasswordScreenProtocol?) {
         self.delegate = delegate
     }
     
@@ -43,10 +37,12 @@ class PasswordScreen: UIView {
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
-        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0)
         tf.borderStyle = .roundedRect
         tf.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
+        tf.autocapitalizationType = .none
         tf.textColor = .white
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 12
@@ -71,7 +67,7 @@ class PasswordScreen: UIView {
     }()
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
-        print("ok")
+        delegate?.tappedRegisterButton()
     }
     
     override init(frame: CGRect) {
@@ -82,7 +78,6 @@ class PasswordScreen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
     
     private func addElements() {
@@ -94,8 +89,7 @@ class PasswordScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            
-            passwordLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 80),
+            passwordLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             
             passwordLabel2.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 60),
@@ -109,8 +103,6 @@ class PasswordScreen: UIView {
             forgotPasswordButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 60),
             forgotPasswordButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             forgotPasswordButton.widthAnchor.constraint(equalToConstant: 120),
-            
         ])
     }
-    
 }

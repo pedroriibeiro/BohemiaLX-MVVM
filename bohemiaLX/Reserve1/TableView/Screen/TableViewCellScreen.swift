@@ -8,9 +8,9 @@
 import UIKit
 
 class TableViewCellScreen: UIView {
-
+    
     lazy var cardView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.layer.cornerRadius = 15
@@ -90,7 +90,7 @@ class TableViewCellScreen: UIView {
             timeLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 10),
             timeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-        
+            
         ])
         
     }

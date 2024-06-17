@@ -8,7 +8,7 @@
 import UIKit
 
 class TabBarVC: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSomeTabBarItems()
@@ -29,6 +29,6 @@ class TabBarVC: UITabBarController {
         items[0].title = "Home"
         items[1].title = "Sair"
     }
-
+    
 }
 

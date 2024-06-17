@@ -20,8 +20,6 @@ class PinVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         pinScreen?.delegate(delegate: self)
-        
-        // Chama o setupTextFieldObserver para adicionar o observador
         setupTextFieldObserver()
         updateNextButtonState()
     }
@@ -56,7 +54,7 @@ extension PinVC: PinScreenProtocol {
         let vc3: SelectVC = SelectVC()
         vc3.modalPresentationStyle = .currentContext
         // MARK: Altera o fluxo de navegação para a select ser a principal
-
+        
         let nav = UINavigationController(rootViewController: vc3)
         nav.modalPresentationStyle = .currentContext
         present(nav, animated: true)

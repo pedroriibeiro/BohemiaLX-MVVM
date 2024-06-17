@@ -6,7 +6,7 @@ class RegisterVC: UIViewController {
     
     var registerScreen: RegisterScreen?
     private var viewModel: RegisterModel = RegisterModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
@@ -28,9 +28,15 @@ class RegisterVC: UIViewController {
 
 extension RegisterVC: RegisterScreenProtocol {
     func customBody() {
-        print("ta ok")
-        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "", password: registerScreen?.passwordTextField.text ?? "")
+        print("Tudo certo")
+        
+        let presentingViewController = self
+        
+        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "",
+                               password: registerScreen?.passwordTextField.text ?? "",
+                               presentingViewController: presentingViewController)
     }
+    
 }
 
 extension RegisterVC: UITextFieldDelegate {

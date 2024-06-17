@@ -12,7 +12,6 @@ class Reserve1VC: UIViewController {
     
     var reserve1Screen: Reserve1Screen?
     var reserve1ViewModel: Reserve1ViewModel = Reserve1ViewModel()
-    // PODE SER AQUI
     var createReserveViewModel = CreateReserveViewModel()
     
     override func loadView() {
@@ -136,11 +135,11 @@ extension Reserve1VC: Reserve1ScreenProtocol {
         reserve1ViewModel.updateDate(date)
     }
 }
-    
-    extension Reserve1VC: CreateReserveVCProtocol {
-        func refreshRequest() {
-            fetchRequest()
-            reserve1Screen?.tableView.reloadData()
-        }
+
+extension Reserve1VC: CreateReserveVCProtocol {
+    func refreshRequest() {
+        fetchRequest()
+        reserve1Screen?.tableView.reloadData()
     }
-    
+}
+
