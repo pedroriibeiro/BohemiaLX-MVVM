@@ -81,9 +81,9 @@ class SelectScreen: UIView {
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
         
-        let logoutImage = UIImage(systemName: "person.circle.fill")
+        let logoutImage = UIImage(systemName: "arrowshape.backward.fill")
         button.setImage(logoutImage, for: .normal)
-        button.tintColor = .systemBlue
+        button.tintColor = .systemRed
         
         return button
     }()
@@ -124,8 +124,8 @@ class SelectScreen: UIView {
             seButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
             seButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
-            logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
-            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            logoutButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             logoutButton.widthAnchor.constraint(equalToConstant: 60)
             
         ])

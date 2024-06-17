@@ -22,19 +22,25 @@ class HomeVC: UIViewController {
         view.backgroundColor = .gray
         homeScreen?.delegate(delegate: self)
     }
+    func loginSuccessful() {
+        let vc3: PinVC = PinVC()
+        vc3.modalPresentationStyle = .currentContext
+        // MARK: Altera o fluxo de navegação para a select ser a principal
+
+        let nav = UINavigationController(rootViewController: vc3)
+        nav.modalPresentationStyle = .currentContext
+        present(nav, animated: true)
+    }
+
         
     }
 extension HomeVC: HomeScreenProtocol {
     func customNavNext() {
-        
-        let vc3: PinVC = PinVC()
-        navigationController?.pushViewController(vc3, animated: true)
-        
-        
         let email = homeScreen?.emailTextField.text ?? ""
         let senha = homeScreen?.passwordTextField.text ?? ""
-        viewModel.login(email: email, password: senha)
+        viewModel.logarUsuario(email: email, senha: senha, viewController: self)
     }
+
     
     func customNavForgotPass() {
         let vc2: PasswordVC = PasswordVC()

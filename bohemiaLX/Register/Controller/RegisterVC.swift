@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class RegisterVC: UIViewController {
     
@@ -8,17 +10,14 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
-        
-        // Configurar delegados dos text fields
-        registerScreen?.delegate(delegate: self)
-        
-        // Adicionar gesto de toque para dispensar o teclado
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
     
     override func loadView() {
         registerScreen = RegisterScreen()
+        registerScreen?.delegate(delegate: self)
+        registerScreen?.delegateTextField(delegate: self)
         view = registerScreen
     }
     
@@ -35,7 +34,6 @@ extension RegisterVC: RegisterScreenProtocol {
 }
 
 extension RegisterVC: UITextFieldDelegate {
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(#function)
     }

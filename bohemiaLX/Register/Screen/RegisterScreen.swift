@@ -75,7 +75,7 @@ class RegisterScreen: UIView {
         button.backgroundColor = .white
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
-        button.isEnabled = false
+        button.isEnabled = true
         return button
     }()
     
@@ -84,7 +84,7 @@ class RegisterScreen: UIView {
         delegate?.customBody()
     }
     
-    func delegate(delegate: UITextFieldDelegate) {
+    func delegateTextField(delegate: UITextFieldDelegate) {
         emailTextField.delegate = delegate
         passwordTextField.delegate = delegate
     }
