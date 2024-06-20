@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc: UIViewController
             
             if isUserLoggedIn() {
-                vc = PinVC()
+                vc = FirstVC()
             } else {
                 vc = HomeVC()
             }

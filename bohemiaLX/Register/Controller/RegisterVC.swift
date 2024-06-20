@@ -32,13 +32,24 @@ extension RegisterVC: RegisterScreenProtocol {
         
         let presentingViewController = self
         
-        viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "",
-                               password: registerScreen?.passwordTextField.text ?? "",
-                               presentingViewController: presentingViewController)
+        // Verificação se as senhas são iguais
+        if registerScreen?.passwordTextField.text == registerScreen?.confirmPasswordTextField.text {
+            print("Senhas iguais. Prosseguir com o login.")
+            
+            // Chamada para a função de registro de usuário
+            viewModel.registerUser(email: registerScreen?.emailTextField.text ?? "",
+                                   password: registerScreen?.passwordTextField.text ?? "",
+                                   presentingViewController: presentingViewController)
+        } else {
+            // Exibir alerta informando que as senhas não coincidem
+            let alert = UIAlertController(title: "Erro", message: "As senhas não coincidem.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
-    
 }
 
+// A extensão para UITextFieldDelegate deve ser separada
 extension RegisterVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(#function)

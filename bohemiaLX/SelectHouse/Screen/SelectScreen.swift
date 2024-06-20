@@ -35,13 +35,11 @@ class SelectScreen: UIView {
     lazy var stAntonioButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("⚪️  BohemiaLX - Santo António", for: .normal)
-        button.backgroundColor = .lightGray
-        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
-                             , for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitle("🔵 BohemiaLX - Santo António", for: .normal)
+        button.backgroundColor = .white.withAlphaComponent(0.8)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.titleLabel?.textAlignment = .natural
-        button.backgroundColor = .lightGray
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedStAntonioButton), for: .touchUpInside)
         return button
@@ -55,12 +53,12 @@ class SelectScreen: UIView {
     lazy var seButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("⚪️  BohemiaLX - Sé", for: .normal)
-        button.setTitleColor(UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitle("🔵  BohemiaLX - Sé", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.titleLabel?.textAlignment = .natural
         button.layer.cornerRadius = 12
-        button.backgroundColor = .lightGray
+        button.backgroundColor = .white.withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(tappedSeButton), for: .touchUpInside)
         return button
     }()

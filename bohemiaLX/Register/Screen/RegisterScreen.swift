@@ -25,11 +25,22 @@ class RegisterScreen: UIView {
     lazy var registerLabel2: UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
-        lb.text = "  Para se registrar é bem simples, só precisamos do seu e-mail e de uma senha:"
+        lb.text = "Crie uma conta com e-mail e senha:"
         lb.numberOfLines = 0
         lb.textAlignment = .left
         lb.textColor = .white
         lb.font = .systemFont(ofSize: 20)
+        return lb
+    }()
+    
+    lazy var registerLabel3: UILabel = {
+        let lb = UILabel()
+        lb.translatesAutoresizingMaskIntoConstraints = false
+        lb.text = "A criação de contas é destinadas apenas aos colaboradores da empresa."
+        lb.numberOfLines = 0
+        lb.textAlignment = .left
+        lb.textColor = .systemRed
+        lb.font = .systemFont(ofSize: 14)
         return lb
     }()
     
@@ -67,6 +78,23 @@ class RegisterScreen: UIView {
         return tf
     }()
     
+    lazy var confirmPasswordTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
+        tf.backgroundColor = UIColor(red: 52/255, green: 52/255, blue: 52/255, alpha: 1.0) /* #343434*/
+        tf.borderStyle = .roundedRect
+        tf.attributedPlaceholder = NSAttributedString(string: "Confirme sua senha", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
+        tf.textColor = .white
+        tf.clipsToBounds = true
+        tf.layer.cornerRadius = 12
+        tf.layer.borderWidth = 1.0
+        tf.layer.borderColor = UIColor.white.cgColor
+        tf.isSecureTextEntry = true
+        return tf
+    }()
+    
     lazy var registerButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -83,6 +111,7 @@ class RegisterScreen: UIView {
     
     @objc func tappedRegisterButton(_ sender: UIButton) {
         print("ok")
+        
         delegate?.customBody()
     }
     
@@ -94,9 +123,13 @@ class RegisterScreen: UIView {
     private func addElements() {
         addSubview(registerLabel)
         addSubview(registerLabel2)
+        addSubview(registerLabel3)
         addSubview(emailTextField)
         addSubview(passwordTextField)
+        addSubview(confirmPasswordTextField)
         addSubview(registerButton)
+        
+        
     }
     
     override init(frame: CGRect) {
@@ -119,15 +152,23 @@ class RegisterScreen: UIView {
             registerLabel2.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             registerLabel2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            emailTextField.topAnchor.constraint(equalTo: registerLabel2.bottomAnchor, constant: 40),
+            registerLabel3.topAnchor.constraint(equalTo: registerLabel2.bottomAnchor, constant: 8),
+            registerLabel3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            registerLabel3.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            
+            emailTextField.topAnchor.constraint(equalTo: registerLabel3.bottomAnchor, constant: 40),
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 60),
+            confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            
+            registerButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 40),
             registerButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             registerButton.widthAnchor.constraint(equalToConstant: 200),
                                                     

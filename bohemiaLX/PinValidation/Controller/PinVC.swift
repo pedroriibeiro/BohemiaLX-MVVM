@@ -51,13 +51,16 @@ class PinVC: UIViewController {
 
 extension PinVC: PinScreenProtocol {
     func customNavigation() {
-        let vc3: SelectVC = SelectVC()
-        vc3.modalPresentationStyle = .currentContext
+//        let vc3: SelectVC = SelectVC()
+//        vc3.modalPresentationStyle = .currentContext
         // MARK: Altera o fluxo de navegação para a select ser a principal
         
-        let nav = UINavigationController(rootViewController: vc3)
-        nav.modalPresentationStyle = .currentContext
-        present(nav, animated: true)
+//        let nav = UINavigationController(rootViewController: vc3)
+//        nav.modalPresentationStyle = .currentContext
+//        present(nav, animated: true)
+        
+        let vc: SelectVC = SelectVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
