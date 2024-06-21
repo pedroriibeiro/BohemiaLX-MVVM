@@ -83,7 +83,7 @@ class SelectScreen: UIView {
         let logoutImage = UIImage(systemName: "arrowshape.backward.fill")
         button.setImage(logoutImage, for: .normal)
         button.tintColor = .systemRed
-        
+        button.isHidden = true
         return button
     }()
     
@@ -111,7 +111,7 @@ class SelectScreen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             
-            LabelOne.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 120),
+            LabelOne.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
             LabelOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             LabelOne.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             

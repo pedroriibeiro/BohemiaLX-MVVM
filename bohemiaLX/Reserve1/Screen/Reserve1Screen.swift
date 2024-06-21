@@ -42,7 +42,7 @@ class Reserve1Screen: UIView {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.showsVerticalScrollIndicator = false
-        tv.backgroundColor = .lightGray
+        tv.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         tv.layer.cornerRadius = 12
         tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
         

@@ -22,8 +22,13 @@ class HomeVC: UIViewController {
         view.backgroundColor = .gray
         homeScreen?.delegate(delegate: self)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+//    
     func loginSuccessful() {
-        let vc3: PinVC = PinVC()
+        let vc3: TabBarVC = TabBarVC()
         vc3.modalPresentationStyle = .currentContext
         // MARK: Altera o fluxo de navegação para a select ser a principal
         

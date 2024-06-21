@@ -39,7 +39,7 @@ class FirstCell: UICollectionViewCell {
         label.textColor = .white.withAlphaComponent(0.8)
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 12, weight: .bold)
         label.lineBreakMode = .byWordWrapping
         return label
     }()
@@ -52,7 +52,7 @@ class FirstCell: UICollectionViewCell {
     func setupView() {
         layer.masksToBounds = true
         layer.cornerRadius = 12
-        
+        contentView.backgroundColor = UIColor(red: 45/255, green: 55/255, blue: 70/255, alpha: 1.0)
         contentView.addSubview(iconImageView)
         contentView.addSubview(iconNameLabel)
         
@@ -60,17 +60,15 @@ class FirstCell: UICollectionViewCell {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            
             self.iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             self.iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             self.iconImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             self.iconImageView.heightAnchor.constraint(equalToConstant: 100),
             
-            self.iconNameLabel.topAnchor.constraint(equalTo: self.iconImageView.bottomAnchor, constant: 16),
+            self.iconNameLabel.topAnchor.constraint(equalTo: self.iconImageView.bottomAnchor, constant: 4),
             self.iconNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             self.iconNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            
-            
+            //self.iconNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
         ])
     }
     

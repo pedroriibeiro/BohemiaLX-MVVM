@@ -46,7 +46,7 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstCell.identifier, for: indexPath) as? FirstCell
-        cell?.configure(with: images[indexPath.item], labelText: labels[indexPath.item])
+        cell?.configure(with: images[indexPath.item], labelText: labels[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
@@ -54,7 +54,7 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             let padding: CGFloat = 10
             let collectionViewSize = collectionView.frame.size.width - padding
             let width = collectionViewSize / 2 - padding
-            return CGSize(width: width, height: width) // Ajuste conforme necessário
+        return CGSize(width: width, height: width * 1.4) // Ajuste conforme necessário
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -68,7 +68,21 @@ extension FirstVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.item == 0 {
-                 let vc = PinVC() // Substitua HomeVC() pela instância real da sua HomeVC
+                 let vc = PinVC() 
+                 navigationController?.pushViewController(vc, animated: true)
+             }
+        
+        if indexPath.item == 1 {
+                 let vc = BetaVC()
+                 navigationController?.pushViewController(vc, animated: true)
+             }
+        
+        if indexPath.item == 2 {
+                 let vc = BetaVC()
+                 navigationController?.pushViewController(vc, animated: true)
+             }
+        if indexPath.item == 3 {
+                 let vc = ConfigVC()
                  navigationController?.pushViewController(vc, animated: true)
              }
     }

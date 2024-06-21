@@ -37,6 +37,11 @@
 		858FD1F22BB223FD00698EA7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F12BB223FD00698EA7 /* FirebaseAuth */; };
 		858FD1F42BB223FD00698EA7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 858FD1F32BB223FD00698EA7 /* FirebaseFirestore */; };
 		8590121A2BC03BD30046283C /* CreateReserveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859012192BC03BD30046283C /* CreateReserveViewModel.swift */; };
+		859310182C25935900FF7551 /* BetaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859310172C25935900FF7551 /* BetaVC.swift */; };
+		8593101A2C25938900FF7551 /* BetaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859310192C25938900FF7551 /* BetaScreen.swift */; };
+		8593101D2C25964B00FF7551 /* ConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593101C2C25964B00FF7551 /* ConfigVC.swift */; };
+		8593101F2C25968100FF7551 /* ConfigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593101E2C25968100FF7551 /* ConfigScreen.swift */; };
+		859310222C259A6500FF7551 /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859310212C259A6500FF7551 /* ConfigViewModel.swift */; };
 		85A4E16B2C247AE100742E4D /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4E16A2C247AE100742E4D /* FirstVC.swift */; };
 		85A4E16D2C247B9600742E4D /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4E16C2C247B9600742E4D /* FirstScreen.swift */; };
 		85A4E16F2C2480A400742E4D /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4E16E2C2480A400742E4D /* FirstCell.swift */; };
@@ -84,6 +89,11 @@
 		858FD1E92BB0A4D300698EA7 /* Reserve1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserve1Screen.swift; sourceTree = "<group>"; };
 		858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		859012192BC03BD30046283C /* CreateReserveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReserveViewModel.swift; sourceTree = "<group>"; };
+		859310172C25935900FF7551 /* BetaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaVC.swift; sourceTree = "<group>"; };
+		859310192C25938900FF7551 /* BetaScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaScreen.swift; sourceTree = "<group>"; };
+		8593101C2C25964B00FF7551 /* ConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVC.swift; sourceTree = "<group>"; };
+		8593101E2C25968100FF7551 /* ConfigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScreen.swift; sourceTree = "<group>"; };
+		859310212C259A6500FF7551 /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		85A4E16A2C247AE100742E4D /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		85A4E16C2C247B9600742E4D /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		85A4E16E2C2480A400742E4D /* FirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
@@ -310,6 +320,8 @@
 		8558D4BB2B93471A00913807 /* bohemiaLX */ = {
 			isa = PBXGroup;
 			children = (
+				8593101B2C25962200FF7551 /* Config */,
+				859310162C25933A00FF7551 /* Beta */,
 				85A4E1682C247A7700742E4D /* First */,
 				854919642C1E80890017DADE /* TabBarController */,
 				8549195E2C1DA9750017DADE /* PinValidation */,
@@ -401,6 +413,25 @@
 				858FD1EC2BB2223000698EA7 /* GoogleService-Info.plist */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		859310162C25933A00FF7551 /* Beta */ = {
+			isa = PBXGroup;
+			children = (
+				859310172C25935900FF7551 /* BetaVC.swift */,
+				859310192C25938900FF7551 /* BetaScreen.swift */,
+			);
+			path = Beta;
+			sourceTree = "<group>";
+		};
+		8593101B2C25962200FF7551 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8593101C2C25964B00FF7551 /* ConfigVC.swift */,
+				8593101E2C25968100FF7551 /* ConfigScreen.swift */,
+				859310212C259A6500FF7551 /* ConfigViewModel.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		85A4E1682C247A7700742E4D /* First */ = {
@@ -676,11 +707,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				854919632C1DAAA20017DADE /* PinScreen.swift in Sources */,
+				8593101F2C25968100FF7551 /* ConfigScreen.swift in Sources */,
 				85C463EE2BFF76C600617A12 /* Reserve2VC.swift in Sources */,
 				8513E2772BFFE82C00965699 /* TableViewCell2.swift in Sources */,
 				85C464012BFF83F800617A12 /* CreateReserve2Screen.swift in Sources */,
 				85C463EB2BFF75CE00617A12 /* SelecModel.swift in Sources */,
 				8557AB732BA465AE006CC784 /* RegisterScreen.swift in Sources */,
+				8593101D2C25964B00FF7551 /* ConfigVC.swift in Sources */,
 				851678F82BBC7582004BE371 /* CreateReserveVC.swift in Sources */,
 				854919602C1DA9A10017DADE /* PinVC.swift in Sources */,
 				85C463FF2BFF835C00617A12 /* CreateReserve2ViewModel.swift in Sources */,
@@ -690,10 +723,13 @@
 				8558D4D12B93496C00913807 /* HomeScreen.swift in Sources */,
 				858FD1E82BB0A4B600698EA7 /* Reserve1VC.swift in Sources */,
 				854919662C1E80DB0017DADE /* TabBarVC.swift in Sources */,
+				8593101A2C25938900FF7551 /* BetaScreen.swift in Sources */,
 				85C463E52BFF758600617A12 /* RegisterModel.swift in Sources */,
 				851678F62BBC71B1004BE371 /* CreateReserveScreen.swift in Sources */,
 				856D5CA82BA7458F00AF68F6 /* PasswordScreen.swift in Sources */,
 				85B684AC2C2107F5002416F9 /* UIViewController+Extension.swift in Sources */,
+				859310222C259A6500FF7551 /* ConfigViewModel.swift in Sources */,
+				859310182C25935900FF7551 /* BetaVC.swift in Sources */,
 				85C463FB2BFF830D00617A12 /* CreateReserve2VC.swift in Sources */,
 				8558D4C12B93471A00913807 /* HomeVC.swift in Sources */,
 				85C463F22BFF770400617A12 /* Reserve2Model.swift in Sources */,

@@ -10,7 +10,7 @@ class SelectVC: UIViewController {
         view.backgroundColor = UIColor(red: 34/255, green: 44/255, blue: 81/255, alpha: 1.0)
         selectScreen?.delegate(delegate: self)
         viewModel = AuthViewModel()
-        configCertification()
+        navigationItem.hidesBackButton = true
     }
     
     override func loadView() {
@@ -22,22 +22,6 @@ class SelectVC: UIViewController {
         let homeVC = HomeVC()
         navigationController?.setViewControllers([homeVC], animated: true)
     }
-    
-    private func configCertification() {
-        let privacePolicyButton = UIBarButtonItem(image: UIImage(systemName: "doc"), style: .done, target: self, action: #selector(openPrivacePolicy))
-        let termsOfUseButton = UIBarButtonItem(image: UIImage(systemName: "doc.fill"), style: .done, target: self, action: #selector(openPrivacePolicy))
-        navigationItem.rightBarButtonItems = [privacePolicyButton, termsOfUseButton]
-    }
-    
-    @objc func openPrivacePolicy() {
-        self.openSafariPageWith(url: "https://doc-hosting.flycricket.io/bohemialx-privacy-policy/d931f227-fe08-475a-91af-8674450f11e6/privacy")
-    }
-    
-    @objc func openTermsOfUse() {
-        self.openSafariPageWith(url: "https://doc-hosting.flycricket.io/bohemialx-terms-of-use/a75adc22-6370-47bf-8778-3f0bb39dac1c/terms")
-    }
-    
-    
 }
 
 extension SelectVC: SelectScreenProtocol {

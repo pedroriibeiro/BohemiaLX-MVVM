@@ -43,9 +43,9 @@ class FirstScreen: UIView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
         
-            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
         
         ])

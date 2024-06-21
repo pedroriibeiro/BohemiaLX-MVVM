@@ -16,8 +16,8 @@ class TabBarVC: UITabBarController {
     }
     
     func addSomeTabBarItems() {
-        let vc1 = UINavigationController(rootViewController: SelectVC())
-        let vc2 = UINavigationController(rootViewController: HomeVC())
+        let vc1 = UINavigationController(rootViewController: FirstVC())
+        let vc2 = UINavigationController(rootViewController: ConfigVC())
         setViewControllers([vc1, vc2], animated: false)
         tabBar.tintColor = .systemBlue
         tabBar.unselectedItemTintColor = .lightGray.withAlphaComponent(0.5)
@@ -25,9 +25,9 @@ class TabBarVC: UITabBarController {
         
         guard let items = tabBar.items else {return}
         items[0].image = UIImage(systemName: "house.fill")
-        items[1].image = UIImage(systemName: "backward.circle.fill")
+        items[1].image = UIImage(systemName: "gearshape.fill")
         items[0].title = "Home"
-        items[1].title = "Sair"
+        items[1].title = "Configurações"
     }
     
 }
