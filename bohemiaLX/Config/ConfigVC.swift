@@ -1,7 +1,7 @@
 import UIKit
 
 class ConfigVC: UIViewController {
-
+    
     var configScreeen: ConfigScreen?
     var viewModel: ConfigViewModel?
     
@@ -18,12 +18,16 @@ class ConfigVC: UIViewController {
     }
     
     private func navigateToLogin() {
-        // Instantiate the initial view controller you want to navigate to (e.g., LoginViewController)
-        let vc = HomeVC()
+        let vc = HomeVC() // Certifique-se de que você tenha um controlador de login
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
         
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.setViewControllers([vc], animated: true)
-        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let delegate = windowScene.delegate as? SceneDelegate,
+           let window = delegate.window {
+            window.rootViewController = nav
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        }
     }
 }
 
@@ -54,37 +58,37 @@ extension ConfigVC: ConfigScreenProtocol {
     
     func delete() {
         let alert = UIAlertController(title: "Confirmar", message: "Digite sua senha para deletar sua conta:", preferredStyle: .alert)
-               alert.addTextField { textField in
-                   textField.placeholder = "Senha"
-                   textField.isSecureTextEntry = true
-               }
-               alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-               alert.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: { [weak self] _ in
-                   guard let self = self,
-                         let textFields = alert.textFields,
-                         let password = textFields.first?.text,
-                         !password.isEmpty else {
-                       self?.showAlert(title: "Erro", message: "Senha não pode estar vazia")
-                       return
-                   }
-                   self.viewModel?.deleteAccount(withPassword: password) { result in
-                       switch result {
-                       case .success:
-                           // Limpar o estado de login
-                           self.resetLoginState()
-                           // Redirecionar para a tela de login
-                           self.navigateToLogin()
-                       case .failure(let error):
-                           self.showAlert(title: "Erro", message: error.localizedDescription)
-                       }
-                   }
-               }))
-               present(alert, animated: true)
-           }
+        alert.addTextField { textField in
+            textField.placeholder = "Senha"
+            textField.isSecureTextEntry = true
+        }
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: { [weak self] _ in
+            guard let self = self,
+                  let textFields = alert.textFields,
+                  let password = textFields.first?.text,
+                  !password.isEmpty else {
+                self?.showAlert(title: "Erro", message: "Senha não pode estar vazia")
+                return
+            }
+            self.viewModel?.deleteAccount(withPassword: password) { result in
+                switch result {
+                case .success:
+                    // Limpar o estado de login
+                    self.resetLoginState()
+                    // Redirecionar para a tela de login
+                    self.navigateToLogin()
+                case .failure(let error):
+                    self.showAlert(title: "Erro", message: error.localizedDescription)
+                }
+            }
+        }))
+        present(alert, animated: true)
+    }
     private func resetLoginState() {
-         
-          NotificationCenter.default.post(name: Notification.Name("UserLoggedOut"), object: nil)
-      }
-   
+        
+        NotificationCenter.default.post(name: Notification.Name("UserLoggedOut"), object: nil)
+    }
+    
 }
 
