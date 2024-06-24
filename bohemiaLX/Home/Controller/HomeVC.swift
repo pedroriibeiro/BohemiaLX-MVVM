@@ -40,6 +40,16 @@ class HomeVC: UIViewController {
     
 }
 extension HomeVC: HomeScreenProtocol {
+    func customWithoutLogin() {
+        let vc3: TabBarVC = TabBarVC()
+        vc3.modalPresentationStyle = .currentContext
+        // MARK: Altera o fluxo de navegação para a select ser a principal
+        
+        let nav = UINavigationController(rootViewController: vc3)
+        nav.modalPresentationStyle = .currentContext
+        present(nav, animated: true)
+    }
+    
     func customNavNext() {
         let email = homeScreen?.emailTextField.text ?? ""
         let senha = homeScreen?.passwordTextField.text ?? ""

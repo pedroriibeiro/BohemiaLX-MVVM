@@ -11,6 +11,7 @@ protocol HomeScreenProtocol: AnyObject {
     func CustomNavRegister()
     func customNavForgotPass()
     func customNavNext()
+    func customWithoutLogin()
 }
 
 class HomeScreen: UIView {
@@ -116,6 +117,23 @@ class HomeScreen: UIView {
         print("Ok!!!")
     }
     
+    lazy var goWithoutLoginButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Continuar sem login", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.titleLabel?.textAlignment = .right
+        button.backgroundColor = .none
+        button.addTarget(self, action: #selector(tappedWithoutLogin), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tappedWithoutLogin(_ sender: UIButton) {
+        delegate?.customWithoutLogin()
+        print("Ok!!!")
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
@@ -133,6 +151,7 @@ class HomeScreen: UIView {
         addSubview(nextButton)
         addSubview(registerButton)
         addSubview(forgotPassword)
+        addSubview(goWithoutLoginButton)
     }
     
     private func configConstraints() {
@@ -164,6 +183,11 @@ class HomeScreen: UIView {
             forgotPassword.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 100),
             forgotPassword.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             forgotPassword.widthAnchor.constraint(equalToConstant: 200),
+            
+            goWithoutLoginButton.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 160),
+            goWithoutLoginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            goWithoutLoginButton.widthAnchor.constraint(equalToConstant: 200),
+            
             
         ])
     }
